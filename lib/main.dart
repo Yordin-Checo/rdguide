@@ -1,6 +1,8 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:rdguide/pages/main_pages/home_page.dart';
+import 'package:rdguide/pages/portada_ciudad.dart';
 import 'package:rdguide/pages/termino_servicio_page.dart';
 import 'package:rdguide/routes/routes.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -48,9 +50,9 @@ class MyApp extends StatelessWidget {
       
       
 
-      initialRoute: '/home',
+      initialRoute: '/portadaDestino',
       routes: getAplicationRoutes(),
-      onGenerateRoute:(settings)=> MaterialPageRoute(builder: (BuildContext context)=>TerminoServicio()),
+      onGenerateRoute:(settings)=> MaterialPageRoute(builder: (BuildContext context)=>HomePage()),
 
     );
   }

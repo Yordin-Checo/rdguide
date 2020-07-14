@@ -1,10 +1,27 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/christopherpaulino/Documents/GitHub/rdguide/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-eu/values-eu.xml",
+            "outputFile": "C:\\Users\\ti.GRUPOBR\\AndroidStudioProjects\\github\\rdguide\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-eu\\values-eu.xml",
             "map": [
                 {
-                    "source": "/Users/christopherpaulino/.gradle/caches/transforms-2/files-2.1/701c33591765b03ec8ed51d702bd262d/appcompat-1.1.0/res/values-eu/values-eu.xml",
+                    "source": "C:\\Users\\ti.GRUPOBR\\.gradle\\caches\\transforms-2\\files-2.1\\3aaf6e5219b7f981ec263df919098c6f\\core-1.1.0\\res\\values-eu\\values-eu.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "48",
+                        "startColumns": "4",
+                        "startOffsets": "5718",
+                        "endColumns": "100",
+                        "endOffsets": "5814"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\ti.GRUPOBR\\.gradle\\caches\\transforms-2\\files-2.1\\701c33591765b03ec8ed51d702bd262d\\appcompat-1.1.0\\res\\values-eu\\values-eu.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -21,7 +38,7 @@
                     }
                 },
                 {
-                    "source": "/Users/christopherpaulino/.gradle/caches/transforms-2/files-2.1/6eb14f512292913515d869914807ad40/play-services-base-17.1.0/res/values-eu/values.xml",
+                    "source": "C:\\Users\\ti.GRUPOBR\\.gradle\\caches\\transforms-2\\files-2.1\\6eb14f512292913515d869914807ad40\\play-services-base-17.1.0\\res\\values-eu\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -38,7 +55,7 @@
                     }
                 },
                 {
-                    "source": "/Users/christopherpaulino/.gradle/caches/transforms-2/files-2.1/aaee3223493d0ff7f8dcb3b85aaa17ec/jetified-play-services-basement-17.0.0/res/values-eu/values.xml",
+                    "source": "C:\\Users\\ti.GRUPOBR\\.gradle\\caches\\transforms-2\\files-2.1\\519389fd640ab6238e9364cecb9b2b36\\jetified-play-services-basement-17.0.0\\res\\values-eu\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -52,23 +69,6 @@
                         "startOffsets": "4027",
                         "endColumns": "200",
                         "endOffsets": "4223"
-                    }
-                },
-                {
-                    "source": "/Users/christopherpaulino/.gradle/caches/transforms-2/files-2.1/3aaf6e5219b7f981ec263df919098c6f/core-1.1.0/res/values-eu/values-eu.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
-                    },
-                    "to": {
-                        "startLines": "48",
-                        "startColumns": "4",
-                        "startOffsets": "5718",
-                        "endColumns": "100",
-                        "endOffsets": "5814"
                     }
                 }
             ]

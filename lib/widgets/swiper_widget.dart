@@ -55,7 +55,7 @@ class SwiperWidget extends StatelessWidget {
                           width: 135.0,
                           decoration: BoxDecoration(
                             color: Colors.transparent,
-                            borderRadius: BorderRadius.circular(10.0),
+                            borderRadius: BorderRadius.circular(20.0),
                           ),
                           child: Padding(
                             padding: EdgeInsets.all(10.0),

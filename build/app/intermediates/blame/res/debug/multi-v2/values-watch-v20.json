@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/christopherpaulino/Documents/GitHub/rdguide/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-watch-v20/values-watch-v20.xml",
+            "outputFile": "C:\\Users\\ti.GRUPOBR\\AndroidStudioProjects\\github\\rdguide\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-watch-v20\\values-watch-v20.xml",
             "map": [
                 {
-                    "source": "/Users/christopherpaulino/.gradle/caches/transforms-2/files-2.1/9dbb96c63580f42a58d581a0d07bb1cb/jetified-play-services-auth-16.0.1/res/values-watch-v20/values.xml",
+                    "source": "C:\\Users\\ti.GRUPOBR\\.gradle\\caches\\transforms-2\\files-2.1\\e7b1fe63fe6ed33b84f21438d328d1d0\\jetified-play-services-auth-16.0.1\\res\\values-watch-v20\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11",
                         "startColumns": "0,0,0,0,0,0,0,0",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "/Users/christopherpaulino/.gradle/caches/transforms-2/files-2.1/701c33591765b03ec8ed51d702bd262d/appcompat-1.1.0/res/values-watch-v20/values-watch-v20.xml",
+                    "source": "C:\\Users\\ti.GRUPOBR\\.gradle\\caches\\transforms-2\\files-2.1\\701c33591765b03ec8ed51d702bd262d\\appcompat-1.1.0\\res\\values-watch-v20\\values-watch-v20.xml",
                     "from": {
                         "startLines": "2,5,8",
                         "startColumns": "4,4,4",
