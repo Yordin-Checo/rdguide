@@ -1,5 +1,5 @@
 //
-//import 'package:apprdguide/services/authenticator.dart';
+//import 'package:rdguide/services/authenticator.dart';
 //import 'package:flutter/cupertino.dart';
 //import 'package:flutter/material.dart';
 //

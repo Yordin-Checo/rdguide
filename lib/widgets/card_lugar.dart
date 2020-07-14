@@ -1,6 +1,6 @@
 
-import 'package:apprdguide/pages/login_page.dart';
-import 'package:apprdguide/pages/login_page_new.dart';
+import 'package:rdguide/pages/login_page.dart';
+import 'package:rdguide/pages/login_page_new.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';

@@ -1,0 +1,46 @@
+{"destinos":
+[
+    {
+        "destino":"Jarabacoa",
+        "calificacion":3,
+        "imagen":"https://cdn.pixabay.com/photo/2016/10/19/08/57/landscape-1752433_960_720.jpg"
+    },
+    {
+        "destino":"Sosua",
+        "calificacion":5,
+        "imagen":"https://cdn.pixabay.com/photo/2016/10/22/18/52/beach-1761410_960_720.jpg"
+    },
+    {
+        "destino":"Pico Duarte",
+        "calificacion":4,
+        "imagen":"https://cdn.pixabay.com/photo/2016/06/17/04/26/mountain-1462655_960_720.jpg"
+    },
+    {
+        "destino":"San Francisco de Macoris",
+        "calificacion":4,
+        "imagen":"https://cdn.pixabay.com/photo/2017/06/22/11/54/town-2430571_960_720.jpg"
+    },
+    {
+        "destino":"Jarabacoa",
+        "calificacion":3,
+        "imagen":"https://cdn.pixabay.com/photo/2016/10/19/08/57/landscape-1752433_960_720.jpg"
+    },
+    {
+        "destino":"Sosua",
+        "calificacion":5,
+        "imagen":"https://cdn.pixabay.com/photo/2016/10/22/18/52/beach-1761410_960_720.jpg"
+    },
+    {
+        "destino":"Pico Duarte",
+        "calificacion":4,
+        "imagen":"https://cdn.pixabay.com/photo/2016/06/17/04/26/mountain-1462655_960_720.jpg"
+    },
+    {
+        "destino":"San Francisco de Macoris",
+        "calificacion":4,
+        "imagen":"https://cdn.pixabay.com/photo/2017/06/22/11/54/town-2430571_960_720.jpg"
+    }
+
+],
+"total_calificacion":5
+}

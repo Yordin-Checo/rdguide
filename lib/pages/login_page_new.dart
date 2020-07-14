@@ -1,8 +1,8 @@
 
-import 'package:apprdguide/services/authenticator.dart';
-import 'package:apprdguide/services/shared_preferences.dart';
+import 'package:rdguide/services/authenticator.dart';
+import 'package:rdguide/services/shared_preferences.dart';
 import 'package:flutter/material.dart';
-import 'package:apprdguide/pages/password_recovery_page.dart';
+import 'package:rdguide/pages/password_recovery_page.dart';
 
 
 class LoginPage extends StatelessWidget{

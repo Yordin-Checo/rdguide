@@ -1,8 +1,8 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:apprdguide/pages/termino_servicio_page.dart';
-import 'package:apprdguide/routes/routes.dart';
+import 'package:rdguide/pages/termino_servicio_page.dart';
+import 'package:rdguide/routes/routes.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 

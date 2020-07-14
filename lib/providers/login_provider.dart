@@ -1,8 +1,8 @@
 
 import 'dart:async';
 
-import 'package:apprdguide/services/authenticator.dart';
-import 'package:apprdguide/services/shared_preferences.dart';
+import 'package:rdguide/services/authenticator.dart';
+import 'package:rdguide/services/shared_preferences.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class _loginProvider {

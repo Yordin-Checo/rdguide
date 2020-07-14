@@ -1,6 +1,6 @@
 import 'dart:core';
 
-import 'package:apprdguide/models/usuario.dart';
+import 'package:rdguide/models/usuario.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class _SharedPreferences {

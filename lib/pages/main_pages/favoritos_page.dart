@@ -11,15 +11,13 @@ class FavoritosPageState extends State<FavoritosPage>{
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Column(
+    return Column(
         children: <Widget>[
           _search(),
           ListView(
 
           )
         ],
-      ),
 
     );
   }

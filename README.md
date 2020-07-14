@@ -1,4 +1,4 @@
-# apprdguide
+# rdguide
 
 A new Flutter application.
 

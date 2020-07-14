@@ -1,6 +1,6 @@
 import 'dart:developer';
 
-import 'package:apprdguide/services/shared_preferences.dart';
+import 'package:rdguide/services/shared_preferences.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';

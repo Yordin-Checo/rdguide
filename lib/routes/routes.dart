@@ -1,18 +1,18 @@
 
-import 'package:apprdguide/pages/acercaDe_page.dart';
-import 'package:apprdguide/pages/ayuda_page.dart';
-import 'package:apprdguide/pages/credi_card_home.dart';
-import 'package:apprdguide/pages/root_page.dart';
-import 'package:apprdguide/pages/termino_servicio_page.dart';
+import 'package:rdguide/pages/acercaDe_page.dart';
+import 'package:rdguide/pages/ayuda_page.dart';
+import 'package:rdguide/pages/credi_card_home.dart';
+import 'package:rdguide/pages/root_page.dart';
+import 'package:rdguide/pages/termino_servicio_page.dart';
 import 'package:flutter/material.dart';
-import 'package:apprdguide/pages/main_pages/home_page.dart';
-import 'package:apprdguide/pages/login_page_new.dart';
-import 'package:apprdguide/pages/tarjetas_opcion_page.dart';
-import 'package:apprdguide/pages/notificacion_page.dart';
-import 'package:apprdguide/pages/perfil_usuario_page.dart';
-import 'package:apprdguide/pages/registro_usuario.dart';
-import 'package:apprdguide/pages/seguridad_page.dart';
-import 'package:apprdguide/pages/cambiar_pass.dart';
+import 'package:rdguide/pages/main_pages/home_page.dart';
+import 'package:rdguide/pages/login_page_new.dart';
+import 'package:rdguide/pages/tarjetas_opcion_page.dart';
+import 'package:rdguide/pages/notificacion_page.dart';
+import 'package:rdguide/pages/perfil_usuario_page.dart';
+import 'package:rdguide/pages/registro_usuario.dart';
+import 'package:rdguide/pages/seguridad_page.dart';
+import 'package:rdguide/pages/cambiar_pass.dart';
 
 
 

@@ -10,7 +10,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:768811071769:android:2769cee1155aa83fcfed88",
         "android_client_info": {
-          "package_name": "com.jmsoft.apprdguide"
+          "package_name": "com.jmsoft.rdguide"
         }
       },
       "oauth_client": [
@@ -18,7 +18,7 @@
           "client_id": "768811071769-a5oeesr5qlp4et43co5024roemr9fa3g.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.jmsoft.apprdguide",
+            "package_name": "com.jmsoft.rdguide",
             "certificate_hash": "48db348d4fc6650654eaf5fce007c488d416ecce"
           }
         },

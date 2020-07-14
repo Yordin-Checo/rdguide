@@ -1,6 +1,6 @@
-import 'package:apprdguide/models/destino.dart';
-import 'package:apprdguide/models/eventos.dart';
-import 'package:apprdguide/providers/destinos_provider.dart';
+import 'package:rdguide/models/destino.dart';
+import 'package:rdguide/models/eventos.dart';
+import 'package:rdguide/providers/destinos_provider.dart';
 import 'package:flutter/material.dart';
 
 class SwiperWidget extends StatelessWidget {

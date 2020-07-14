@@ -2,7 +2,7 @@
 import 'dart:async';
 import 'dart:convert';
 
-import 'package:apprdguide/models/destino.dart';
+import 'package:rdguide/models/destino.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/services.dart';
 import 'package:http/http.dart' as http;
@@ -36,10 +36,13 @@ class _DestinosProvider{
 
  Future<List<Destino>> cargarDatos() async{
 
-      final url = Uri.http(_url, "/GetDestinosPopulares/4564");
+      final url = Uri.http(_url, "/GetDestinosPopulares");
 
-      final resp = await http.get(url);
+      final Map<String,String> header = {"Token":"12345"};
 
+      final resp = await http.get(url,headers: header);
+
+      print("La peticion${resp.statusCode}");
       if(resp.statusCode == 200){
 
         final decodeData = json.decode(resp.body);

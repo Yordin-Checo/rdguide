@@ -1,6 +1,6 @@
-import 'package:apprdguide/pages/main_pages/favoritos_page.dart';
+import 'package:rdguide/pages/main_pages/favoritos_page.dart';
 import 'package:flutter/material.dart';
-import 'package:apprdguide/pages/main_pages/inicio_page.dart';
+import 'package:rdguide/pages/main_pages/inicio_page.dart';
 import '../configuracion_page.dart';
 
 class HomePage extends StatefulWidget{
@@ -36,7 +36,7 @@ class HomePageState extends State<HomePage>{
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.notifications_none),
-            title: Text("Eventos")
+            title: Text("Notificaciones")
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.menu),

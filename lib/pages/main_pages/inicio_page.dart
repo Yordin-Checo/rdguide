@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:apprdguide/models/destino.dart';
-import 'package:apprdguide/widgets/card_lugar.dart';
-import 'package:apprdguide/widgets/portada_widget.dart';
-import 'package:apprdguide/widgets/swiper_widget.dart';
+import 'package:rdguide/models/destino.dart';
+import 'package:rdguide/widgets/card_lugar.dart';
+import 'package:rdguide/widgets/portada_widget.dart';
+import 'package:rdguide/widgets/swiper_widget.dart';
 
 
 class InicioPage extends StatefulWidget{
