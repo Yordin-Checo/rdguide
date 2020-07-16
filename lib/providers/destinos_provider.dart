@@ -15,26 +15,29 @@ class _DestinosProvider{
     //HACE QUE CUANDO SE LLAME AL CONSTRUCTOR EJECUTE LA FUNCION
    // cargarDatos();
   }
-  final CollectionReference _collectionPopulares = Firestore.instance.collection('destinos_populares');
-
-    List<Destino> _destinosPopulares = new List();
-
-
-    final _popularesStreamController = StreamController<List<Destino>>.broadcast();
-
-    Function(List<Destino>) get popularesSink => _popularesStreamController.sink.add;
-
-    Stream<List<Destino>> get popularesStream => _popularesStreamController.stream;
-
-    
-
-    void onDispose(){
-      _popularesStreamController.close();
-    }
+//  final CollectionReference _collectionPopulares = Firestore.instance.collection('destinos_populares');
+//
+//    List<Destino> _destinosPopulares = new List();
+//
+//
+//    final _popularesStreamController = StreamController<List<Destino>>.broadcast();
+//
+//    Function(List<Destino>) get popularesSink => _popularesStreamController.sink.add;
+//
+//    Stream<List<Destino>> get popularesStream => _popularesStreamController.stream;
+//
+//
+//
+//    void onDispose(){
+//      _popularesStreamController.close();
+//    }
 
 
 
  Future<List<Destino>> cargarDatos() async{
+
+
+      List<Destino> _destinosPopulares = new List();
 
       final url = Uri.http(_url, "/GetDestinosPopulares");
 
@@ -42,22 +45,15 @@ class _DestinosProvider{
 
       final resp = await http.get(url,headers: header);
 
-      print("La peticion${resp.statusCode}");
       if(resp.statusCode == 200){
-
         final decodeData = json.decode(resp.body);
         final destinosData =  decodeData['item2'];
-
         final destinos = Destinos.fromJsonList(destinosData);
-
-        popularesSink(destinos.items);
-
-        return destinos.items;
+        _destinosPopulares = destinos.items;
 
       }
+      return _destinosPopulares;
 
-
-//
 //   _collectionPopulares.snapshots().listen((data) {
 //     data.documents.forEach((element) {
 //       _destinosPopulares.add(Destino.fromJsonMap(element.data));
@@ -81,7 +77,7 @@ class _DestinosProvider{
 //
 //    _destinosPopulares.addAll(destinos.items);
     //y como ese metodo lo que hace es destructurarlos y asignarlo a items, retornamos items
-    return _destinosPopulares;
+
 
 
   }

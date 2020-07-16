@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:rdguide/bloc/bloc_provider.dart';
+import 'package:rdguide/bloc/destinos_populares_bloc.dart';
 import 'package:rdguide/models/destino.dart';
 import 'package:rdguide/widgets/card_lugar.dart';
 import 'package:rdguide/widgets/portada_widget.dart';
@@ -6,45 +8,65 @@ import 'package:rdguide/widgets/swiper_widget.dart';
 
 
 class InicioPage extends StatefulWidget{
+
   @override
   InicioPageState createState() =>InicioPageState();
 }
 
 
 class InicioPageState extends State<InicioPage>{
-
+  final bloc = DestinosPopularesBloc();
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Column(
-      children: <Widget>[
-        _search(),
-        PortadaWidget(),
-        SizedBox(height: 10.0,),
-        SwiperWidget(titulo: "Destinos Populares",),
-        SwiperWidget(titulo: "Eventos",),
-        /*Expanded(
-          child: Container(
-              child:
-              StreamBuilder(
-                stream: destinoProvider.popularesStream,
-                builder: (BuildContext context,AsyncSnapshot<List> list){
-                  if(!list.hasData) return Container(
-                    height: MediaQuery.of(context).size.height,
-                    child: CircularProgressIndicator(),
-                  );
-                  else{
-                    return   ListView(
-                        children: items(list.data)
-                    );}
-                },
-              )
-          ),
-        ),*/
-      ],
+    bloc.getPopulares();
+    return BlocProvider(
+      bloc: bloc,
+      child: SingleChildScrollView(
+        child: Column(
+        children: <Widget>[
+          _search(),
+          PortadaWidget(),
+          SizedBox(height: 10.0,),
+         _swiperPopulares("Destinos Populares",bloc),
+         _swiperPopulares("Eventos",bloc)
+          /*Expanded(
+            child: Container(
+                child:
+                StreamBuilder(
+                  stream: destinoProvider.popularesStream,
+                  builder: (BuildContext context,AsyncSnapshot<List> list){
+                    if(!list.hasData) return Container(
+                      height: MediaQuery.of(context).size.height,
+                      child: CircularProgressIndicator(),
+                    );
+                    else{
+                      return   ListView(
+                          children: items(list.data)
+                      );}
+                  },
+                )
+            ),
+          ),*/
+        ],
+        ),
       ),
     );
   }
+Widget _swiperPopulares(String titulo ,DestinosPopularesBloc bloc){
+    return  StreamBuilder(
+            stream: bloc.popularesStream,
+            builder: (context, AsyncSnapshot<List<Destino>> snapshot){
+              final result = snapshot.data;
+              if(snapshot.hasData){
+                return SwiperWidget(titulo: titulo,elementos: result,);
+              }else{
+                return Container(
+                  child: CircularProgressIndicator(),
+                );
+              }
+    },
+    );
+}
 
   Widget _search(){
       return Container(
