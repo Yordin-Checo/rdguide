@@ -1,6 +1,5 @@
 import 'package:carousel_pro/carousel_pro.dart';
 import 'package:flutter/material.dart';
-import 'package:rdguide/widgets/swiper_widget.dart';
 
 class PortadaDestino extends StatefulWidget {
   @override
@@ -14,7 +13,8 @@ class _PortadaDestinoState extends State<PortadaDestino> {
   Widget build(BuildContext context) {
     var scaffold = Scaffold(
       appBar: AppBar(
-        title: Text('Portada Ciudad'),
+        title: Text('Jarabacoa',),
+        centerTitle: true,
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
           onPressed: (){
@@ -34,7 +34,7 @@ class _PortadaDestinoState extends State<PortadaDestino> {
             SizedBox(height: 20.0),
             _crearAcciones(),
             SizedBox(height: 20.0),
-            SwiperWidget(titulo: "Populares",),
+            
                      
           ],
         ),
@@ -60,54 +60,56 @@ Widget _titulo(){
 Widget _portada(){
   
     return Padding(
-      
-      padding: const EdgeInsets.only(right: 16, left: 16, top: 5),
+      padding: const EdgeInsets.only(right: 16,left: 16),
       child: Container(
-                    height: 250,//MediaQuery.of(context).size.width,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20.0),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black26,
-                          offset: Offset(0.0, 2.0),
-                          blurRadius: 6.0,
-                        ),
-                      ],
-                    ),
-                    child:  ClipRRect(
-                        borderRadius: BorderRadius.circular(30.0),
-                        child: SizedBox(
-  height: 240.0,
-  width: double.infinity,
-  child: Carousel(
-    showIndicator: true,
-    indicatorBgPadding:5,
-    dotBgColor: Colors.transparent,
-    autoplay: true,
-    noRadiusForIndicator: true,
-    
-    //imagen slider protada ciudad
-    
-    images: [  
-      
-      Image.network(""),
-      Image.network(""),
-      Image.network(""),
-      
-    ],
-  )
-  
-),
-                      ),
-                    
-                                                                                                                                                             
-                ),
+        alignment: Alignment.bottomCenter,
+        width: double.infinity,
+        height: 200,
+
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(30),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black26,
+              offset: Offset(0.0, 2.0),
+              blurRadius: 6.0,
+            ),
+          ],
+
+        ),
+        child:  ClipRRect(
+          borderRadius: BorderRadius.circular(30.0),
+          child: SizedBox(
+              height: 200.0,
+              width: double.infinity,
+              child: Carousel(
+                showIndicator: true,
+                indicatorBgPadding:5,
+                dotSpacing: 15,
+                dotBgColor: Colors.transparent,
+                dotIncreaseSize: 2,
+                autoplay: true,
+                dotSize: 5,
+                //noRadiusForIndicator: true,
+
+                images: [
+
+                  NetworkImage("https://lh3.googleusercontent.com/proxy/ryuhNwHUDfsfCx9kv_SQ6WRJtCFEuK8ET5AD2gTedXkq2CMt5HbC6Q3TEQuBTG7Kgfcxh0VwGO5XoQxJqziI8b6eTqfQlnyteN811KLgDK7JU0DRXXGkX1HuFIUK729_ULPartAcGC-K2rptoRo"),
+                  NetworkImage("https://idominicanas.com/wp-content/uploads/2015/05/Parapente-en-Jarabacoa.jpg"),
+                  NetworkImage("https://como-funciona.com/wp-content/uploads/2019/02/c%C3%B3mo-funciona-el-rafting.jpg"),
+
+
+                ],
+              )
+          ),
+        ),
+      ),
     );
    
 }
 //Actividad actividades = actividad[0];
 //Destinos destination = destinos[0];
-
+final String descripcion = "La ciudad de Jarabacoa está ubicada en la Cordillera Central de la República Dominicana, en en pleno corazón del país y a 530 m sobre el nivel del mar, en el precioso valle de La Vega. Está rodeada por cuatro grandes ríos: el Yaque del Norte, el Jimenoa, el Guanajuma y el Baiguate. ";
 Widget _descripcion(){
   
   return Container(
@@ -119,8 +121,7 @@ Widget _descripcion(){
          
               SizedBox(height: 5,),
     Container(
-              child: Text(                    
-                          "Descripcion de la ciudad",
+              child: Text("$descripcion",
                           textAlign: TextAlign.justify,
                           style: TextStyle(
                           fontSize: 12.0,
@@ -142,7 +143,7 @@ Widget _crearAcciones(){
     children: <Widget>[
       _accion('assets/balnearios.png',   'Balnearios'),
       _accion('assets/home.png',         'Alojamientos'),
-      _accion('assets/restaurante.png',  'Restaurantes'),
+      _accion('assets/restaurante.png',  'Restaurantess'),
       _accion('assets/otros.png',        'otros'),        
                       
     ],
@@ -158,3 +159,6 @@ Widget _accion(String imagenes, String texto){
         ],        
       );
 }
+
+
+

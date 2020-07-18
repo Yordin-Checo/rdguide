@@ -41,9 +41,10 @@ class PortadaWidget extends StatelessWidget{
 
                 images: [
 
-                  NetworkImage("https://cdn.pixabay.com/photo/2016/10/19/08/57/landscape-1752433_960_720.jpg"),
-                  NetworkImage("https://cdn.pixabay.com/photo/2016/10/22/18/52/beach-1761410_960_720.jpg"),
-                  NetworkImage("https://cdn.pixabay.com/photo/2016/06/17/04/26/mountain-1462655_960_720.jpg"),
+                  NetworkImage("http://joelmieses-001-site1.ctempurl.com/publicidad.jpg"),
+                  NetworkImage("http://joelmieses-001-site1.ctempurl.com/publicidad.jpg"),
+                  NetworkImage("http://joelmieses-001-site1.ctempurl.com/publicidad.jpg"),
+                  
 
 
                 ],

@@ -32,7 +32,7 @@ class SwiperWidget extends StatelessWidget {
           height: 260.0,
           child:  ListView.builder(
     scrollDirection: Axis.horizontal,
-    itemCount: eventos.length,
+    itemCount: 10,
     itemBuilder: (BuildContext context, int index) {
     Destino hotel = elementos[index];
     return Container(

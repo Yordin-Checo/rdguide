@@ -53,18 +53,23 @@ class InicioPageState extends State<InicioPage>{
     );
   }
 Widget _swiperPopulares(String titulo ,DestinosPopularesBloc bloc){
-    return  StreamBuilder(
-            stream: bloc.popularesStream,
-            builder: (context, AsyncSnapshot<List<Destino>> snapshot){
-              final result = snapshot.data;
-              if(snapshot.hasData){
-                return SwiperWidget(titulo: titulo,elementos: result,);
-              }else{
-                return Container(
-                  child: CircularProgressIndicator(),
-                );
-              }
-    },
+    return  GestureDetector(
+      onTap: (){
+        Navigator.pushNamed(context, '/portadaDestino');
+      },
+          child: StreamBuilder(
+              stream: bloc.popularesStream,
+              builder: (context, AsyncSnapshot<List<Destino>> snapshot){
+                final result = snapshot.data;
+                if(snapshot.hasData){
+                  return SwiperWidget(titulo: titulo,elementos: result,);
+                }else{
+                  return Container(
+                    child: CircularProgressIndicator(),
+                  );
+                }
+      },
+      ),
     );
 }
 
