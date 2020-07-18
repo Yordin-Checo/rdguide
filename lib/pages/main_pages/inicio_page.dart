@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:rdguide/bloc/bloc_provider.dart';
 import 'package:rdguide/bloc/destinos_populares_bloc.dart';
+import 'package:rdguide/bloc/publicidad_bloc.dart';
 import 'package:rdguide/models/destino.dart';
+import 'package:rdguide/models/publicidad.dart';
 import 'package:rdguide/widgets/card_lugar.dart';
 import 'package:rdguide/widgets/portada_widget.dart';
 import 'package:rdguide/widgets/swiper_widget.dart';
@@ -16,16 +18,18 @@ class InicioPage extends StatefulWidget{
 
 class InicioPageState extends State<InicioPage>{
   final bloc = DestinosPopularesBloc();
+  final blocPublicidad =  PublicidadBloc();
   @override
   Widget build(BuildContext context) {
     bloc.getPopulares();
+    bloc.getPublicidad();
     return BlocProvider(
       bloc: bloc,
       child: SingleChildScrollView(
         child: Column(
         children: <Widget>[
           _search(),
-          PortadaWidget(),
+          _portadaPublicidad(bloc),
           SizedBox(height: 10.0,),
          _swiperPopulares("Destinos Populares",bloc),
          _swiperPopulares("Eventos",bloc)
@@ -50,6 +54,21 @@ class InicioPageState extends State<InicioPage>{
         ],
         ),
       ),
+    );
+  }
+
+  Widget _portadaPublicidad(DestinosPopularesBloc bloc){
+    return StreamBuilder(
+      stream: bloc.publicidadStream,
+      builder: (context,AsyncSnapshot<List<Publicidad>> snapshot){
+        var result = List<Publicidad>();
+        if(snapshot.hasData){
+          result = snapshot.data;
+          return PortadaWidget(resultados: result,);
+        }else{
+          return PortadaWidget();
+        }
+    },
     );
   }
 Widget _swiperPopulares(String titulo ,DestinosPopularesBloc bloc){

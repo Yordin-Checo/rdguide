@@ -18,6 +18,7 @@ class PublicidadBloc implements Bloc{
 
  void getPublicidad() async{
   final result = await publicidadProvider.getPublicidad();
+  print(result);
   publicidadSink(result);
  }
 

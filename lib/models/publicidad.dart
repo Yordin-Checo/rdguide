@@ -26,4 +26,9 @@ class Publicidad {
     "titulo": titulo,
     "estado": estado,
   };
+
+  @override
+  String toString() {
+    return 'Publicidad{idpublicidad: $idpublicidad, img: $img, titulo: $titulo, estado: $estado}';
+  }
 }
