@@ -6,10 +6,11 @@ import 'package:rdguide/models/destino.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/services.dart';
 import 'package:http/http.dart' as http;
+import 'package:rdguide/providers/utils_provider.dart';
 
 class _DestinosProvider{
 
-  final String _url = "joelmieses-001-site2.ctempurl.com";
+  final String _url = UtilProvider.getUrl;
 
   _DestinosProvider(){
     //HACE QUE CUANDO SE LLAME AL CONSTRUCTOR EJECUTE LA FUNCION

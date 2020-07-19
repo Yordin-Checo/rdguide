@@ -7,13 +7,15 @@ class PortadaDestino extends StatefulWidget {
 }
 
 class _PortadaDestinoState extends State<PortadaDestino> {
-  
+
+
 
   @override
   Widget build(BuildContext context) {
+    final lugar = ModalRoute.of(context).settings.arguments;
     var scaffold = Scaffold(
       appBar: AppBar(
-        title: Text('Jarabacoa',),
+        title: Text(lugar,),
         centerTitle: true,
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
