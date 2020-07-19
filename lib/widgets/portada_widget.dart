@@ -4,7 +4,7 @@ import 'package:rdguide/models/publicidad.dart';
 
 
 class PortadaWidget extends StatelessWidget{
-
+  
   List<Publicidad> resultados;
 
   PortadaWidget({this.resultados});
@@ -12,11 +12,11 @@ class PortadaWidget extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(right: 8,left: 8),
+      padding: const EdgeInsets.only(right: 12,left: 12),
       child: Container(
         alignment: Alignment.bottomCenter,
         width: double.infinity,
-        height: 200,
+        height: 210,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(30),
 
@@ -26,7 +26,7 @@ class PortadaWidget extends StatelessWidget{
 
           borderRadius: BorderRadius.circular(30.0),
           child: SizedBox(
-              height: 200.0,
+              height: 210.0,
               width: double.infinity,
               child: Carousel(
                 showIndicator: true,

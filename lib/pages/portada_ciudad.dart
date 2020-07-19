@@ -29,7 +29,7 @@ class _PortadaDestinoState extends State<PortadaDestino> {
             SizedBox(height: 10.0),                   
             _titulo(), 
             SizedBox(height: 20.0),     
-            _portada(),
+            //_portada(),
             _descripcion(),
             SizedBox(height: 20.0),
             _crearAcciones(),
