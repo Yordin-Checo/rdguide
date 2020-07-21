@@ -43,7 +43,7 @@ class _PerfilPage extends State<PerfilPage> {
                     Divider(),
                     Column(
                       children: <Widget>[
-                        _guardar(),
+                        _actualizar(),
                       ],
                     )
                   ],
@@ -57,8 +57,8 @@ class _PerfilPage extends State<PerfilPage> {
   Widget _fotoPerfil(){
     return Center(
       child: Container(
-        width: 120.0,
-        height: 115.0,
+        width: 135.0,
+        height: 135.0,
         decoration: BoxDecoration(
           shape: BoxShape.circle,
           image: DecorationImage(
@@ -168,12 +168,12 @@ class _PerfilPage extends State<PerfilPage> {
   }
 
   //este widget es el correspondiente al campo boton guardar datos actualizados
-  Widget _guardar(){
+  Widget _actualizar(){
 
     return RaisedButton(
       child: Container(
         padding: EdgeInsets.symmetric(horizontal: 50.0, vertical: 15.0),
-        child: Text('Guardar',style: TextStyle(fontSize: 18.0,fontWeight: FontWeight.bold),),
+        child: Text('Actualizar datos',style: TextStyle(fontSize: 18.0,fontWeight: FontWeight.bold),),
       ),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(15.0)
@@ -181,7 +181,9 @@ class _PerfilPage extends State<PerfilPage> {
       elevation: 0.0,
       color: Colors.blue,
       textColor: Colors.white,
-      onPressed: (){ },
+      onPressed: (){
+        Navigator.pushNamed(context, '/actualizarDatos');
+      },
     );
   }
 }

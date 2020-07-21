@@ -21,7 +21,9 @@ class _ConfiPage extends State<ConfiPage> {
     return ListView(
           padding: EdgeInsets.only(top:  10.0),
               children: <Widget>[
+                SizedBox(height:20.0),
                 _fotoPerfil(),
+                SizedBox(height:20.0),
                 Divider(),
                 // _modoOscuro(),
                 // Divider(),
@@ -50,8 +52,8 @@ class _ConfiPage extends State<ConfiPage> {
   Widget _fotoPerfil(){
     return Center(
       child: Container(
-        width: 120.0,
-        height: 115.0,
+        width: 135.0,
+        height: 135.0,
         decoration: BoxDecoration(
           shape: BoxShape.circle,
           image: DecorationImage(
