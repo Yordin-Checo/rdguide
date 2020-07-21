@@ -214,14 +214,14 @@ Widget _registrar(){
 
     return RaisedButton(
       child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 25.0, vertical: 15.0),
+        padding: EdgeInsets.symmetric(horizontal: 50.0, vertical: 15.0),
         child: Text('Registrar',),
       ),
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(10.0)
+        borderRadius: BorderRadius.circular(15.0)
       ),
       elevation: 0.0,
-      color: Colors.blueGrey,
+      color: Colors.blue,
       textColor: Colors.white,
       onPressed: (){
 

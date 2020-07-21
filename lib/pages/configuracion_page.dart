@@ -60,7 +60,9 @@ class _ConfiPage extends State<ConfiPage> {
             image: NetworkImage(url)
           )
         ),
+        
       ),
+     
     );
   }
 

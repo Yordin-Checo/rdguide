@@ -18,6 +18,8 @@ class _RegistroUsuarioPageState extends State<RegistroUsuarioPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Registrar Usuario'),
+
+        
       ),
       body: ListView(
         padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0,),
@@ -26,7 +28,7 @@ class _RegistroUsuarioPageState extends State<RegistroUsuarioPage> {
           _nombreInput(),
           Divider(),
           _apellidoInput(),
-          Divider(),
+          //Divider(),
           //_sexo(),
           MyStatefulWidget(),
           Divider(),
@@ -83,49 +85,50 @@ class _RegistroUsuarioPageState extends State<RegistroUsuarioPage> {
      ),
     );
   }
-bool valor0 = false;
-bool valor1 = false;
+// bool valor0 = false;
+// bool valor1 = false;
 
-  Widget _sexo(){
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
-        Text("Sexo: ",style: TextStyle(fontSize: 18,color: Colors.black54, fontWeight: FontWeight.bold),),
+//   Widget _sexo(){
+//     return Row(
+//       mainAxisAlignment: MainAxisAlignment.center,
+//       children: <Widget>[
+//         Text("Sexo: ",style: TextStyle(fontSize: 18,color: Colors.black54, fontWeight: FontWeight.bold),),
         
         
-        Text("Masculino",style: TextStyle(fontSize: 18,color: Colors.black54),),
-        Checkbox(
+//         Text("Masculino",style: TextStyle(fontSize: 18,color: Colors.black54),),
+//         Checkbox(
           
-                value: valor0,
-                onChanged: (bool value) {
-                setState(() {
-                valor0 = value;
-                });                   
-    }
-    ),
-  Text("Femenino",style:TextStyle(fontSize: 18,color: Colors.black54)),
-    Checkbox(
+//                 value: valor0,
+//                 onChanged: (bool value) {
+//                 setState(() {
+//                 valor0 = value;
+//                 });                   
+//     }
+//     ),
+//   Text("Femenino",style:TextStyle(fontSize: 18,color: Colors.black54)),
+//     Checkbox(
           
-                    value: valor1,
-                    onChanged: (bool value) {
-                      setState(() {
-                        valor1 = value;
-                      });                   
-    }
-    )
+//                     value: valor1,
+//                     onChanged: (bool value) {
+//                       setState(() {
+//                         valor1 = value;
+//                       });                   
+//     }
+//     )
     
     
     
     
-    ],
-    );
-  }
+//     ],
+//     );
+//   }
 
 
 
   //este widget es el correspondiente al campo fecha de nacimiento
  _creaFecha( BuildContext context) {
 
+   //final format = DateFormat("yyyy-MM-dd");
     return TextField(
       enableInteractiveSelection: false,
       controller: _inputFieldDateController,

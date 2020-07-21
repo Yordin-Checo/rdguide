@@ -24,12 +24,21 @@ class MySampleState extends State<MySample> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Credit Card View',
+      // title: 'Flutter Credit Card View',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.green,
       ),
       home: Scaffold(
+        appBar: AppBar(
+          title: Text('Registrar tarjeta'),
+          leading: IconButton(
+            icon: Icon(Icons.arrow_back),
+            onPressed: (){
+              Navigator.pop(context);
+            },
+          ),
+        ),
         resizeToAvoidBottomInset: true,
         body: SafeArea(
           child: Column(

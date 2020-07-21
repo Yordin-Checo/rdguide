@@ -51,15 +51,17 @@ class _SeguridadPage extends State<SeguridadPage> {
         },
           child: Align(
             alignment: Alignment.topLeft,
-            child: Text("Cambiar Contraseña", style: TextStyle(fontSize: 18.0),)),
+            child: Text("Cambiar Contraseña", style: TextStyle(fontSize: 18.0),)
+          ),
       ),
     );
   }
 
  Widget __switchAutentificacion(){
      return SwitchListTile(
-        title: Text('Autentificación en dos pasos'),
+        title: Text('Autentificación en dos pasos',style: TextStyle(fontSize: 18.0),),
         value: autentificacion,
+        activeColor: Colors.green,
         onChanged: (value){
           setState(() {
             autentificacion = value;

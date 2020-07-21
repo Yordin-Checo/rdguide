@@ -14,12 +14,9 @@ class _AcercaDe extends State<AcercaDe> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
-        backgroundColor: Colors.white,
-        title: Text('Acerca de', style: TextStyle(color: Colors.black),textAlign: TextAlign.center,),
-        elevation: 0,
+        title: Text('Acerca de'),
         leading: IconButton(
-          icon: Icon(Icons.arrow_back,color: Colors.black,),
+          icon: Icon(Icons.arrow_back),
           onPressed: (){
             Navigator.pop(context);
           },

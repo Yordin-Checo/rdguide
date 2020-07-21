@@ -4,6 +4,8 @@ import 'package:rdguide/services/shared_preferences.dart';
 import 'package:flutter/material.dart';
 import 'package:rdguide/pages/password_recovery_page.dart';
 
+import 'recuperar_pass.dart';
+
 
 class LoginPage extends StatelessWidget{
   final auth = authenticator;
@@ -100,7 +102,7 @@ class LoginPage extends StatelessWidget{
                       GestureDetector(
                         onTap: (){
                           Navigator.push(context, MaterialPageRoute(builder: (context){
-                            return SignupPage();
+                            return RecuperarPage();
                           }));
                         },
                         child: Text("¿Olvido su contraseña?",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.blueAccent),),

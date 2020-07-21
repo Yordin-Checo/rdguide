@@ -14,6 +14,13 @@ class _CambioPassPageState extends State<CambioPassPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Cambiar contraseña'),
+        leading: IconButton(
+            icon: Icon(Icons.arrow_back),
+            onPressed: (){
+              Navigator.pop(context);
+            },
+          ),
+        
       ),
       body: ListView(
         padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 20.0,),

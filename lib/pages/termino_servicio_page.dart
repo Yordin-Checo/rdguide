@@ -14,12 +14,9 @@ class _TerminoServicio extends State<TerminoServicio> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
-        backgroundColor: Colors.white,
-        title: Text('Termino y Servicio', style: TextStyle(color: Colors.black),textAlign: TextAlign.center,),
-        elevation: 0,
+        title: Text('Terminos y Servicio'),
         leading: IconButton(
-          icon: Icon(Icons.arrow_back,color: Colors.black,),
+          icon: Icon(Icons.arrow_back),
           onPressed: (){
             Navigator.pop(context);
           },

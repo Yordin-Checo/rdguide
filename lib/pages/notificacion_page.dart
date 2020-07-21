@@ -47,6 +47,7 @@ class _NotificationPage extends State<NotificationPage> {
      return SwitchListTile(
         title: Text('Notificación Push'),
         value: notificacion,
+        activeColor: Colors.green,
         onChanged: (value){
           setState(() {
             notificacion = value;
@@ -60,6 +61,7 @@ class _NotificationPage extends State<NotificationPage> {
      return SwitchListTile(
         title: Text('Correo Electrónico'),
         value: correo,
+        activeColor: Colors.green,
         onChanged: (value){
           setState(() {
             correo = value;
@@ -73,6 +75,7 @@ class _NotificationPage extends State<NotificationPage> {
      return SwitchListTile(
         title: Text('Alerta de eventos'),
         value: alerta,
+        activeColor: Colors.green,
         onChanged: (value){
           setState(() {
             alerta = value;
@@ -86,6 +89,7 @@ class _NotificationPage extends State<NotificationPage> {
      return SwitchListTile(
         title: Text('Notificaciones SMS'),
         value: sms,
+        activeColor: Colors.green,
         onChanged: (value){
           setState(() {
             sms = value;

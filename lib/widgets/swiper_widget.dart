@@ -56,11 +56,13 @@ class SwiperWidget extends StatelessWidget {
     mainAxisAlignment: MainAxisAlignment.start,
     children: <Widget>[
     Text(
-    hotel.nombre,textAlign: TextAlign.center,overflow: TextOverflow.ellipsis,
-    style: TextStyle(
-    fontSize: 15.0,
-    fontWeight: FontWeight.w600,
-    letterSpacing: 0,
+      hotel.nombre,
+      textAlign: TextAlign.center,
+      overflow: TextOverflow.ellipsis,
+      style: TextStyle(
+      fontSize: 15.0,
+      fontWeight: FontWeight.w600,
+      letterSpacing: 0,
     
 
     ),

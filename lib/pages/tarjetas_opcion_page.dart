@@ -14,7 +14,14 @@ class _TarjetaOpcionPageState extends State<TarjetaOpcionPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Tarjeta'),
-      ),
+        leading: IconButton(
+            icon: Icon(Icons.arrow_back),
+            onPressed: (){
+              Navigator.pop(context);
+            },
+          ),
+        ),
+      
       body: ListView(
         padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 20.0,),
         children: <Widget>[

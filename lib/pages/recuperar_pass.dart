@@ -16,13 +16,33 @@ class _RecuperarPage extends State<RecuperarPage> {
       body: ListView(
         padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 20.0,),
         children: <Widget>[
+          _recuperarPass(),
+          SizedBox(height:30.0),
           _emailRecuparacion(),
           SizedBox(height:30.0),
           _btnRecuperer(),
+          SizedBox(height:30.0),
+          _btnIniciar()
           //_mostrarAlert(),
         ],
       ),
       );
+  }
+
+  _recuperarPass(){
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        SizedBox(height: 10,),
+        //Text("Olvidaste tu contraseña",style: TextStyle(fontSize: 26,fontWeight: FontWeight.bold),),
+        SizedBox(height: 6,),
+        Text("Favor de introducir su correo eléctronico le llegara un mensaje de restablecimiento de contraseña.",
+        style: TextStyle(fontSize: 20,color: Colors.black87),
+        textAlign: TextAlign.justify,
+        ),
+      ],
+              
+    );
   }
 
   Widget _emailRecuparacion() {
@@ -60,5 +80,29 @@ class _RecuperarPage extends State<RecuperarPage> {
 
       },
     );
+  }
+
+  Widget _btnIniciar(){
+    return Column(
+        children: <Widget>[
+          Padding(
+                    padding: const EdgeInsets.only(bottom: 10),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Text("Ya tengo una cuenta.",style: TextStyle(fontWeight: FontWeight.bold),),
+                        GestureDetector(
+                          onTap: (){
+                            Navigator.pop(context);
+                          },
+                          child: Text("Iniciar sesión",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.red),),
+                        )
+                      ],
+                    ),
+                  ),
+        ],
+      );
+    
   }
 }
