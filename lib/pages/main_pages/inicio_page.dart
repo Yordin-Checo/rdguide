@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:rdguide/bloc/bloc_provider.dart';
 import 'package:rdguide/bloc/destinos_populares_bloc.dart';
-import 'package:rdguide/bloc/publicidad_bloc.dart';
 import 'package:rdguide/models/destino.dart';
 import 'package:rdguide/models/eventos.dart';
 import 'package:rdguide/models/publicidad.dart';
-import 'package:rdguide/widgets/card_lugar.dart';
 import 'package:rdguide/widgets/portada_widget.dart';
 import 'package:rdguide/widgets/swiper_widget.dart';
 
@@ -135,7 +133,7 @@ void irDestino(dynamic destino){
         ),
       );
     }
-
+/*
   List<Widget> items(List<Destino>list){
 
     final List<Widget> destinos = [];
@@ -145,5 +143,5 @@ void irDestino(dynamic destino){
     });
 
     return destinos;
-  }
+  }*/
 }
