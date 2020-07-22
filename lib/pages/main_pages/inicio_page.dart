@@ -88,8 +88,8 @@ class InicioPageState extends State<InicioPage>{
       },
     );
 }
-void irDestino(String ciudad){
-    Navigator.pushNamed(context, '/portadaDestino',arguments: ciudad);
+void irDestino(dynamic destino){
+    Navigator.pushNamed(context, '/portadaDestino',arguments: destino);
 }
 
   Widget _swiperEventos(String titulo ,DestinosPopularesBloc bloc){
@@ -110,7 +110,7 @@ void irDestino(String ciudad){
 
   Widget _search(){
       return Container(
-        margin: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+        margin: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
         child: Row(
           children: <Widget>[
             Expanded(

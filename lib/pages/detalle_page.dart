@@ -1,52 +1,65 @@
+import 'dart:async';
+
 import 'package:carousel_pro/carousel_pro.dart';
 import 'package:flutter/material.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 
-class PortadaDestino extends StatefulWidget {
+class DetallePage extends StatefulWidget {
   @override
-  _PortadaDestinoState createState() => _PortadaDestinoState();
+  _DetallePageState createState() => _DetallePageState();
 }
 
-class _PortadaDestinoState extends State<PortadaDestino> {
+class _DetallePageState extends State<DetallePage> {
 
 
 
   @override
   Widget build(BuildContext context) {
-    final lugar = ModalRoute.of(context).settings.arguments;
-    var scaffold = Scaffold(
+    final dynamic lugar = ModalRoute.of(context).settings.arguments;
+    return Scaffold(
       appBar: AppBar(
-        title: Text(lugar,),
         centerTitle: true,
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back),
-          onPressed: (){
-            Navigator.pop(context);
-          },
-        ),
+        title: Text(lugar.nombre),
+
       ),
-      body: SafeArea(
-        child: ListView(
-          padding: EdgeInsets.symmetric(vertical: 10.0),
-          children: <Widget>[   
-            SizedBox(height: 10.0),                   
-            _titulo(), 
-            SizedBox(height: 20.0),     
+      body:ListView(
+          padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
+          children: <Widget>[
+            Hero(
+              tag: lugar.img,
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(20.0),
+                child: FadeInImage(
+                  placeholder: AssetImage("assets/loading.gif"),
+                  image: NetworkImage("${lugar.img}"),
+                ),
+              ),
+            ),
+            SizedBox(height: 10.0),
+            _titulo(),
+            SizedBox(height: 20.0),
             //_portada(),
             _descripcion(),
             SizedBox(height: 20.0),
             _crearAcciones(),
             SizedBox(height: 20.0),
-            
-                     
+
+
+
+
           ],
         ),
-      ),
-     
-    
     );
-    return scaffold;
   }
+
+
 }
+
+
+
+
+
+
 Widget _titulo(){
   return  Padding(
     padding: const EdgeInsets.only(right: 16,left: 16),
@@ -60,7 +73,7 @@ Widget _titulo(){
 
 
 Widget _portada(){
-  
+
     return Padding(
       padding: const EdgeInsets.only(right: 16,left: 16),
       child: Container(
@@ -107,7 +120,7 @@ Widget _portada(){
         ),
       ),
     );
-   
+
 }
 //Actividad actividades = actividad[0];
 //Destinos destination = destinos[0];

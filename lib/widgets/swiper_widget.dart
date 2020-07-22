@@ -35,9 +35,9 @@ class SwiperWidget extends StatelessWidget {
     scrollDirection: Axis.horizontal,
     itemCount: elementos.length,
     itemBuilder: (BuildContext context, int index) {
-    dynamic hotel = elementos[index];
+    dynamic elemento = elementos[index];
     return GestureDetector(
-      onTap: ()=>onTap(hotel.nombre),
+      onTap: ()=>onTap(elemento),
       child: Container(
       margin: EdgeInsets.all(10.0),
       width: 120.0,
@@ -59,7 +59,7 @@ class SwiperWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
         Text(
-        hotel.nombre,textAlign: TextAlign.center,overflow: TextOverflow.ellipsis,
+          elemento.nombre,textAlign: TextAlign.center,overflow: TextOverflow.ellipsis,
         style: TextStyle(
         fontSize: 15.0,
         fontWeight: FontWeight.w600,
@@ -88,14 +88,17 @@ class SwiperWidget extends StatelessWidget {
       ),
       ],
       ),
-      child: ClipRRect(
-      borderRadius: BorderRadius.circular(10.0),
-      child: Image(
-      height: 165.0,
-      width: 120.0,
-      image: NetworkImage(hotel.img),
-      fit: BoxFit.cover,
-      ),
+      child: Hero(
+        tag: elemento.img,
+        child: ClipRRect(
+        borderRadius: BorderRadius.circular(10.0),
+        child: Image(
+        height: 165.0,
+        width: 120.0,
+        image: NetworkImage(elemento.img),
+        fit: BoxFit.cover,
+        ),
+        ),
       ),
       )
       ],
