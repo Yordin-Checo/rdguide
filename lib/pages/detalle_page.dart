@@ -17,9 +17,10 @@ final bloc = LugaresBloc();
   
   @override
   Widget build(BuildContext context) {
-    bloc.getsLugares();
+
     final dynamic lugar = ModalRoute.of(context).settings.arguments;
-   
+    String idelemento = lugar?.idciudad;
+    bloc.getsLugares(idelemento);
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -74,9 +75,7 @@ Widget _swiperLugares(String titulo ,LugaresBloc bloc){
                 if(snapshot.hasData){
                   return SwiperWidget(titulo: titulo,elementos: result,onTap:irDestino, );
                 }else{
-                  return Container(
-                    child: CircularProgressIndicator(),
-                  );
+                  return  CircularProgressIndicator();
                 }
       },
     );

@@ -17,10 +17,11 @@ class _LugaresProvider {
 
   final _url = UtilProvider.getUrl;
 
-  Future<List<Lugar>> getLugares() async{
+  Future<List<Lugar>> getLugares(String destino) async{
     final lugaresList = List<Lugar>();
 
-    final url = Uri.http(_url,"/Getlugar/R,69");
+    final url = Uri.http(_url,"/Getlugar/R,${destino}");
+    print(url);
     final Map<String,String> header = {"Token":"12235"};
 
     final resp = await http.get(url,headers: header);

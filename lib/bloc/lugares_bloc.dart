@@ -13,8 +13,8 @@ class LugaresBloc implements Bloc{
   Stream<List<Lugar>> get lugaresStream => _lugaresController.stream;
 
 
-  void getsLugares() async{
-    final result = await lugaresProvider.getLugares();
+  void getsLugares(String destino) async{
+    final result = await lugaresProvider.getLugares(destino);
     _lugaresSink(result);
 
   }

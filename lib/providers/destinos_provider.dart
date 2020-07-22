@@ -79,9 +79,9 @@ class _DestinosProvider{
 //    _destinosPopulares.addAll(destinos.items);
     //y como ese metodo lo que hace es destructurarlos y asignarlo a items, retornamos items
 
-
-
   }
+
+
   
 }
 
