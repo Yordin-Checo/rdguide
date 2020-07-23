@@ -1,9 +1,12 @@
 
 import 'package:rdguide/pages/acercaDe_page.dart';
 import 'package:rdguide/pages/ayuda_page.dart';
+import 'package:rdguide/pages/cancelacion_reserva.dart';
+import 'package:rdguide/pages/comofunciona_page.dart';
 import 'package:rdguide/pages/credi_card_home.dart';
 import 'package:rdguide/pages/detalle_page.dart';
 import 'package:rdguide/pages/main_pages/resultado_page.dart';
+import 'package:rdguide/pages/pagar_reservacion.dart';
 import 'package:rdguide/pages/root_page.dart';
 import 'package:rdguide/pages/termino_servicio_page.dart';
 import 'package:flutter/material.dart';
@@ -35,6 +38,9 @@ import 'package:rdguide/pages/cambiar_pass.dart';
       '/acercade'         : (BuildContext context)   => AcercaDe(),
       '/portadaDestino'   : (BuildContext context)   => DetallePage(),
       '/resultado'        : (BuildContext context)   => ResultadoPage(),
+      '/cancelacion'      : (BuildContext context)   => CancelacionPage(),
+      '/comofunciona'     : (BuildContext context)   => Comofunciona(),
+      '/pagareserva'      : (BuildContext context)   => PagarReserva(),
 
 
       
