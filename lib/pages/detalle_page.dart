@@ -19,7 +19,7 @@ final bloc = LugaresBloc();
   Widget build(BuildContext context) {
 
     final dynamic lugar = ModalRoute.of(context).settings.arguments;
-    String idelemento = lugar?.idciudad;
+    String idelemento = lugar?.id;
     bloc.getsLugares(idelemento);
     return Scaffold(
       appBar: AppBar(

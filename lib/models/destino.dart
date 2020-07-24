@@ -21,7 +21,7 @@ class Destinos {
 
 class Destino {
   Destino({
-    this.idciudad,
+    this.id,
     this.idpais,
     this.nombre,
     this.descripcion,
@@ -31,7 +31,7 @@ class Destino {
     this.img
   });
 
-  String idciudad;
+  String id;
   String idpais;
   String nombre;
   String descripcion;
@@ -41,7 +41,7 @@ class Destino {
   String img;
 
   factory Destino.fromJson(Map<String, dynamic> json) => Destino(
-    idciudad: json["idciudad"],
+    id: json["idciudad"],
     idpais: json["idpais"],
     nombre: json["nombre"],
     descripcion: json["descripcion"],
@@ -52,7 +52,7 @@ class Destino {
   );
 
   Map<String, dynamic> toJson() => {
-    "idciudad": idciudad,
+    "idciudad": id,
     "idpais": idpais,
     "nombre": nombre,
     "descripcion": descripcion,

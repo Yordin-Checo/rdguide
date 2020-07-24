@@ -1,20 +1,20 @@
 class Evento {
   Evento({
-    this.idevento,
+    this.id,
     this.nombre,
     this.descripcion,
     this.fechavenci,
     this.img,
   });
 
-  String idevento;
+  String id;
   String nombre;
   String descripcion;
   String fechavenci;
   String img;
 
   factory Evento.fromJson(Map<String, dynamic> json) => Evento(
-    idevento: json["idevento"],
+    id: json["idevento"],
     nombre: json["nombre"],
     descripcion: json["descripcion"],
     fechavenci: json["fechavenci"],
@@ -22,7 +22,7 @@ class Evento {
   );
 
   Map<String, dynamic> toJson() => {
-    "idevento": idevento,
+    "idevento": id,
     "nombre": nombre,
     "descripcion": descripcion,
     "fechavenci": fechavenci,
