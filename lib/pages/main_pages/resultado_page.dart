@@ -117,16 +117,16 @@ class _ResultadoPageState extends State<ResultadoPage> {
                           ),
                         ],
     
-  ),
- child:  ClipRRect(
+                      ),
+                      child:  ClipRRect(
                         borderRadius: BorderRadius.circular(30.0),
                         child: SizedBox(
-  height: 240.0,
-  width: double.infinity,
-  child: SizedBox(
+                       height: 240.0,
+                       width: double.infinity,
+                      child: SizedBox(
     //height: 200.0,
-    width: 450.0,
-    child: Carousel(
+                       width: 450.0,
+                       child: Carousel(
       images: [
         NetworkImage('https://r-cf.bstatic.com/images/hotel/max1024x768/169/169913212.jpg'),
         NetworkImage('https://r-cf.bstatic.com/images/hotel/max1024x768/169/169913212.jpg'),        

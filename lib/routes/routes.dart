@@ -6,6 +6,7 @@ import 'package:rdguide/pages/configuracion_page.dart';
 import 'package:rdguide/pages/cancelacion_reserva.dart';
 import 'package:rdguide/pages/comofunciona_page.dart';
 import 'package:rdguide/pages/credi_card_home.dart';
+import 'package:rdguide/pages/detalle_lugar.dart';
 import 'package:rdguide/pages/detalle_page.dart';
 import 'package:rdguide/pages/guia2_turs.dart';
 import 'package:rdguide/pages/guia3_trus.dart';
@@ -42,7 +43,7 @@ import 'package:rdguide/pages/cambiar_pass.dart';
       '/ayuda'            : (BuildContext context)   => Ayuda(),
       '/acercade'         : (BuildContext context)   => AcercaDe(),
       '/ajustes'          : (BuildContext context)   => ConfiPage(),
-      '/actualizarDatos'  : (BuildContext context)   => ActualizarDatosPage()
+      '/actualizarDatos'  : (BuildContext context)   => ActualizarDatosPage(),
       '/portadaDestino'   : (BuildContext context)   => DetallePage(),
       '/resultado'        : (BuildContext context)   => ResultadoPage(),
       '/cancelacion'      : (BuildContext context)   => CancelacionPage(),
@@ -51,6 +52,7 @@ import 'package:rdguide/pages/cambiar_pass.dart';
       '/guia1'            : (BuildContext context)   => Guia1Page(),
       '/guia2'            : (BuildContext context)   => Guia2Page(),
       '/guia3'            : (BuildContext context)   => Guia3Page(),
+      '/detalleLugar'     : (BuildContext context)   =>DetalleLugar()
 
 
       

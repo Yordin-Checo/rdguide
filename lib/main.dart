@@ -48,7 +48,7 @@ class MyApp extends StatelessWidget {
 
 
 
-        initialRoute: '/ajustes',
+        initialRoute: '/home',
         routes: getAplicationRoutes(),
         onGenerateRoute:(settings)=> MaterialPageRoute(builder: (BuildContext context)=>HomePage()),
 

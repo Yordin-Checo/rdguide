@@ -60,7 +60,7 @@ final bloc = LugaresBloc();
     
   }
 void irDestino(dynamic destino){
-    Navigator.pushNamed(context, '/portadaDestino',arguments: destino);
+    Navigator.pushNamed(context, '/portadaLugar',arguments: destino);
 }
 
 
