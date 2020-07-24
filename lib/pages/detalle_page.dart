@@ -23,6 +23,7 @@ final bloc = LugaresBloc();
     bloc.getsLugares(idelemento);
     return Scaffold(
       appBar: AppBar(
+        
         centerTitle: true,
         title: Text(lugar.nombre),
 

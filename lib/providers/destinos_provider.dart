@@ -3,8 +3,6 @@ import 'dart:async';
 import 'dart:convert';
 
 import 'package:rdguide/models/destino.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter/services.dart';
 import 'package:http/http.dart' as http;
 import 'package:rdguide/providers/utils_provider.dart';
 

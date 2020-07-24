@@ -21,6 +21,7 @@ class _DetalleLugarState extends State<DetalleLugar> {
     bloc.getsLugares(idelemento);
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Color(0xFF1510269),
         centerTitle: true,
         title: Text(lugar.nombre),
 

@@ -54,7 +54,7 @@ import 'package:rdguide/widgets/foto_lugar.dart';
       '/guia2'            : (BuildContext context)   => Guia2Page(),
       '/guia3'            : (BuildContext context)   => Guia3Page(),
       '/detalleLugar'     : (BuildContext context)   =>DetalleLugar(),
-      '/fotolugar'     : (BuildContext context)   =>FotoLugar()
+      
 
 
       
