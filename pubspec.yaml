@@ -35,6 +35,7 @@ dependencies:
   cloud_firestore: ^0.13.7
   flutter_credit_card: 0.1.1
   http: ^0.12.1
+  google_maps_flutter: ^0.5.28+1
 
   # #esta es la dependencia para el campo fecha
   # flutter_localizations:
@@ -44,6 +45,7 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.3
+  font_awesome_flutter: ^8.8.1
 
 dev_dependencies:
   flutter_test:

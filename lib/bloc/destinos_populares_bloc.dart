@@ -1,8 +1,10 @@
 import 'dart:async';
 import 'package:rdguide/bloc/bloc.dart';
 import 'package:rdguide/models/destino.dart';
+import 'package:rdguide/models/eventos.dart';
 import 'package:rdguide/models/publicidad.dart';
 import 'package:rdguide/providers/destinos_provider.dart';
+import 'package:rdguide/providers/eventos_provider.dart';
 import 'package:rdguide/providers/publicidad_provider.dart';
 
 
@@ -21,6 +23,7 @@ class DestinosPopularesBloc implements Bloc{
     _popularesSink(result);
   }
 
+
   List<Publicidad> _publicidad = List<Publicidad>();
   List<Publicidad> get getList => _publicidad;
 
@@ -36,10 +39,24 @@ class DestinosPopularesBloc implements Bloc{
   }
 
 
+  StreamController _eventosPrincipalesController = StreamController<List<Evento>>.broadcast();
+
+  Function(List<Evento>) get _eventosPrincipalesSink => _eventosPrincipalesController.sink.add;
+  Stream<List<Evento>> get eventosPrincipalesStream => _eventosPrincipalesController.stream;
+
+
+  void getEventosPrincipales() async{
+    final result = await eventosProvider.getEventosPrincipales();
+    _eventosPrincipalesSink(result);
+
+  }
+
+
   @override
   void dispose() {
     _streamController.close();
     _publicidadController.close();
+    _eventosPrincipalesController.close();
   }
 
 

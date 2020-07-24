@@ -1,34 +1,31 @@
-class Eventos {
-  String imageUrl;
-  String nombre;
-  int precio;
-
-  Eventos({
-    this.imageUrl,
+class Evento {
+  Evento({
+    this.id,
     this.nombre,
-    this.precio,
+    this.descripcion,
+    this.fechavenci,
+    this.img,
   });
-}
 
-final List<Eventos> eventos = [
-  Eventos(
-    imageUrl: 'https://cdn.pixabay.com/photo/2016/06/17/04/26/mountain-1462655_960_720.jpg',
-    nombre: 'Jarabacoa',
-    precio: 375,
-  ),
-  Eventos(
-    imageUrl: 'https://cdn.pixabay.com/photo/2016/10/22/18/52/beach-1761410_960_720.jpg',
-    nombre: 'Samana',
-    precio: 300,
-  ),
-  Eventos(
-    imageUrl: 'https://cdn.pixabay.com/photo/2016/10/22/18/52/beach-1761410_960_720.jpg',
-    nombre: 'Barahona',
-    precio: 240,
-  ),
-  Eventos(
-    imageUrl: 'https://cdn.pixabay.com/photo/2016/06/17/04/26/mountain-1462655_960_720.jpg',
-    nombre: 'Sosua',
-    precio: 240,
-  ),
-];
+  String id;
+  String nombre;
+  String descripcion;
+  String fechavenci;
+  String img;
+
+  factory Evento.fromJson(Map<String, dynamic> json) => Evento(
+    id: json["idevento"],
+    nombre: json["nombre"],
+    descripcion: json["descripcion"],
+    fechavenci: json["fechavenci"],
+    img: json["img"],
+  );
+
+  Map<String, dynamic> toJson() => {
+    "idevento": id,
+    "nombre": nombre,
+    "descripcion": descripcion,
+    "fechavenci": fechavenci,
+    "img": img,
+  };
+}

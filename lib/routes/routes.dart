@@ -3,8 +3,15 @@ import 'package:rdguide/pages/Actualizardato_pages.dart';
 import 'package:rdguide/pages/acercaDe_page.dart';
 import 'package:rdguide/pages/ayuda_page.dart';
 import 'package:rdguide/pages/configuracion_page.dart';
+import 'package:rdguide/pages/cancelacion_reserva.dart';
+import 'package:rdguide/pages/comofunciona_page.dart';
 import 'package:rdguide/pages/credi_card_home.dart';
-import 'package:rdguide/pages/portada_ciudad.dart';
+import 'package:rdguide/pages/detalle_page.dart';
+import 'package:rdguide/pages/guia2_turs.dart';
+import 'package:rdguide/pages/guia3_trus.dart';
+import 'package:rdguide/pages/guia_turs1.dart';
+import 'package:rdguide/pages/main_pages/resultado_page.dart';
+import 'package:rdguide/pages/pagar_reservacion.dart';
 import 'package:rdguide/pages/root_page.dart';
 import 'package:rdguide/pages/termino_servicio_page.dart';
 import 'package:flutter/material.dart';
@@ -34,10 +41,17 @@ import 'package:rdguide/pages/cambiar_pass.dart';
       '/terminoservicio'  : (BuildContext context)   => TerminoServicio(),
       '/ayuda'            : (BuildContext context)   => Ayuda(),
       '/acercade'         : (BuildContext context)   => AcercaDe(),
-      '/portadaDestino'   : (BuildContext context)   => PortadaDestino(),
       '/ajustes'          : (BuildContext context)   => ConfiPage(),
       '/actualizarDatos'  : (BuildContext context)   => ActualizarDatosPage()
-      
+      '/portadaDestino'   : (BuildContext context)   => DetallePage(),
+      '/resultado'        : (BuildContext context)   => ResultadoPage(),
+      '/cancelacion'      : (BuildContext context)   => CancelacionPage(),
+      '/comofunciona'     : (BuildContext context)   => Comofunciona(),
+      '/pagareserva'      : (BuildContext context)   => PagarReserva(),
+      '/guia1'            : (BuildContext context)   => Guia1Page(),
+      '/guia2'            : (BuildContext context)   => Guia2Page(),
+      '/guia3'            : (BuildContext context)   => Guia3Page(),
+
 
       
 
