@@ -7,6 +7,7 @@ import 'package:rdguide/pages/detalle_page.dart';
 import 'package:rdguide/pages/termino_servicio_page.dart';
 import 'package:rdguide/routes/routes.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:rdguide/widgets/foto_lugar.dart';
 
 
 void main() {
@@ -48,9 +49,9 @@ class MyApp extends StatelessWidget {
 
 
 
-        initialRoute: '/home',
+        initialRoute: '/fotolugar',
         routes: getAplicationRoutes(),
-        onGenerateRoute:(settings)=> MaterialPageRoute(builder: (BuildContext context)=>HomePage()),
+        onGenerateRoute:(settings)=> MaterialPageRoute(builder: (BuildContext context)=>FotoLugar()),
 
       ),
     );
