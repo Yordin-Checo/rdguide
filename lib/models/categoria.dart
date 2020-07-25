@@ -3,8 +3,9 @@ class Categoria {
   String nombre;
   String img;
   int id;
+  String lugar;
 
-  Categoria({this.nombre,this.id,this.img});
+  Categoria({this.nombre,this.id,this.img,this.lugar});
 
   factory Categoria.fromJson(Map<String,dynamic> json) => Categoria (
     nombre : json['nombre'],
@@ -14,8 +15,6 @@ class Categoria {
 
   @override
   String toString() {
-    return 'Categoria{nombre: $nombre, img: $img, id: $id}';
+    return 'Categoria{nombre: $nombre, img: $img, id: $id, lugar: $lugar}';
   }
-
-
 }

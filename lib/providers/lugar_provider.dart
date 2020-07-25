@@ -43,7 +43,7 @@ class _LugaresProvider {
   Future<List<Lugar>> getLugarPorCategoria(String destino,String categoria)async{
     final lugaresList = List<Lugar>();
 
-    final url = Uri.http(_url,"/GetlGetLugarPorCategoria/${categoria},${destino}");
+    final url = Uri.http(_url,"/GetLugarPorCategoria/${categoria},${destino}");
     print(url);
     final Map<String,String> header = {"Token":"12235"};
 
@@ -52,13 +52,14 @@ class _LugaresProvider {
     if(resp.statusCode == 200){
       final jsonData = resp.body;
       final decodeData = json.decode(jsonData);
-      final listData = decodeData["item2"];
+      final List<dynamic> listData = decodeData["item2"];
 
       if(listData!= null){
+        if(listData.isNotEmpty){
         for(var e in listData){
           final lugar = Lugar.fromJson(e);
           lugaresList.add(lugar);
-        }}
+        }}}
     }
     return lugaresList;
   }

@@ -9,17 +9,17 @@ class CategoriaProvider{
 
     final listCategorias = List<Categoria>();
 
-   final resp = await rootBundle.loadString('data/categorias.json');
+   final resp = await rootBundle.loadString('data/data.json');
 
    final dataMap = json.decode(resp);
 
    final Listdata = dataMap["categorias"];
 
    for(var c in Listdata){
-     listCategorias.add(c);
+     final cat = Categoria.fromJson(c);
+     listCategorias.add(cat);
    }
 
-   print(listCategorias);
 
    return listCategorias;
 

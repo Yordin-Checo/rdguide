@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:rdguide/models/lugares.dart';
 
 
 
 class CardLugar extends StatelessWidget{
   
-  final String img;
-  final String nombre;
-  final String rating;
-  final String precio;
+ Lugar lugar;
 
-  CardLugar({this.img="https://gv-images.viamichelin.com/images/michelin_guide/max/NX-44115.jpg",this.nombre="Hotel Gran jimenoa",this.rating="⭐⭐⭐⭐",this.precio=""});
+  CardLugar(this.lugar);
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +16,7 @@ class CardLugar extends StatelessWidget{
         child: Column(
            children: <Widget>[
              ClipRRect(borderRadius: BorderRadius.circular(20),
-             child: Image(image: NetworkImage(img,))),
+             child: Image(image: NetworkImage(lugar.img,))),
            Padding(
              padding: const EdgeInsets.symmetric(vertical: 10),
              child: Row(
@@ -29,12 +27,12 @@ class CardLugar extends StatelessWidget{
                            crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         SizedBox(height: 4,),
-                        Text(nombre,style: TextStyle(fontSize: 16.0,fontWeight: FontWeight.w600),),
-                        if(precio.isNotEmpty) Text(precio,style: TextStyle(fontSize: 16.0,fontWeight: FontWeight.w900),),
+                        Text(lugar.nombre,style: TextStyle(fontSize: 16.0,fontWeight: FontWeight.w600),),
+                        if(lugar.preciodesde.isNotEmpty) Text(lugar.preciodesde,style: TextStyle(fontSize: 16.0,fontWeight: FontWeight.w900),),
                       ],
                     ),
                   ),
-                  Text(rating,style: TextStyle(fontSize: 16.0,fontWeight: FontWeight.w600)),
+                  Text("⭐⭐⭐",style: TextStyle(fontSize: 16.0,fontWeight: FontWeight.w600)),
                ],
              ),
            ),

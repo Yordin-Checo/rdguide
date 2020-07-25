@@ -11,7 +11,7 @@ import 'package:rdguide/pages/detalle_page.dart';
 import 'package:rdguide/pages/guia2_turs.dart';
 import 'package:rdguide/pages/guia3_trus.dart';
 import 'package:rdguide/pages/guia_turs1.dart';
-import 'package:rdguide/pages/main_pages/resultado_page.dart';
+import 'package:rdguide/pages/main_pages/lugaresporcat_page.dart';
 import 'package:rdguide/pages/pagar_reservacion.dart';
 import 'package:rdguide/pages/root_page.dart';
 import 'package:rdguide/pages/termino_servicio_page.dart';
@@ -46,7 +46,7 @@ import 'package:rdguide/widgets/card_lugar.dart';
       '/ajustes'          : (BuildContext context)   => ConfiPage(),
       '/actualizarDatos'  : (BuildContext context)   => ActualizarDatosPage(),
       '/portadaDestino'   : (BuildContext context)   => DetallePage(),
-      '/resultado'        : (BuildContext context)   => ResultadoPage(),
+      '/resultado'        : (BuildContext context)   => LugaresCategoria(),
       '/cancelacion'      : (BuildContext context)   => CancelacionPage(),
       '/comofunciona'     : (BuildContext context)   => Comofunciona(),
       '/pagareserva'      : (BuildContext context)   => PagarReserva(),

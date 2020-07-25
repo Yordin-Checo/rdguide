@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:rdguide/bloc/lugares_bloc.dart';
+import 'package:rdguide/models/categoria.dart';
 import 'package:rdguide/models/lugares.dart';
 import 'package:rdguide/providers/categorias_provider.dart';
 import 'package:rdguide/widgets/swiper_widget.dart';
@@ -15,13 +16,20 @@ class DetallePage extends StatefulWidget {
 class _DetallePageState extends State<DetallePage> {
 final bloc = LugaresBloc();
 
-  
+String idLugar="";
+
   @override
   Widget build(BuildContext context) {
-    categoriaProvider.getCategorias();
     final dynamic lugar = ModalRoute.of(context).settings.arguments;
+
     String idelemento = lugar?.id;
+
+    setState(() {
+      idLugar = idelemento;
+    });
+
     bloc.getsLugares(idelemento);
+    bloc.getCategorias();
     return Scaffold(
       appBar: AppBar(
         
@@ -44,7 +52,7 @@ final bloc = LugaresBloc();
               ),
             ),        
             SizedBox(height: 20.0),
-            _crearAcciones(),
+            _crearAcciones(bloc),
             SizedBox(height: 20.0),
           Text(lugar.descripcion,
                           textAlign: TextAlign.justify,
@@ -85,30 +93,47 @@ Widget _swiperLugares(String titulo ,LugaresBloc bloc){
 
 
 
-Widget _crearAcciones(){
-  return GestureDetector(
-    onTap: (){Navigator.pushNamed(context, '/resultado');},
-      child: Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: <Widget>[
-        _accion('assets/balnearios.png',   'Balnearios'),
-        _accion('assets/home.png',         'Alojamientos'),
-        _accion('assets/restaurante.png',  'Restaurantess'),
-        _accion('assets/otros.png',        'otros'),        
-                        
-      ],
-    ),
+Widget _crearAcciones(LugaresBloc bloc){
+  return StreamBuilder(
+    stream: bloc.categoriasStream,
+    builder: (context, AsyncSnapshot<List<Categoria>> snapshot) {
+      if(snapshot.hasData){
+        final lista = snapshot.data;
+        return  Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              _accion(lista.firstWhere((e) => e.id ==1)),
+              _accion(lista.firstWhere((e) => e.id ==2)),
+              _accion(lista.firstWhere((e) => e.id ==5)),
+              _accion(lista.firstWhere((e) => e.id ==1)),
+            ],
+        );
+      }else{
+        return  Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: <Widget>[
+
+          ],
+        );
+      }
+
+    }
   );
 }
 
-Widget _accion(String imagenes, String texto){
-  return Column(
-        children: <Widget>[
-          Image.asset(imagenes,height: 50,width: 50,),
-          SizedBox(height: 5,),
-          Text(texto,style: TextStyle(color: Colors.black87, fontSize: 15),),
-        ],        
-      );
+Widget _accion(Categoria categoria){
+    categoria.lugar = idLugar;
+  return GestureDetector(
+
+    onTap: (){Navigator.of(context).pushNamed('/resultado',arguments: categoria);},
+    child: Column(
+          children: <Widget>[
+            Image.asset(categoria.img,height: 50,width: 50,),
+            SizedBox(height: 5,),
+            Text(categoria.nombre,style: TextStyle(color: Colors.black87, fontSize: 15),),
+          ],
+        ),
+  );
 }
 
 
