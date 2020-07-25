@@ -19,8 +19,6 @@ class LugaresBloc implements Bloc{
 
   }
 
-  
-
   @override
   void dispose() {
    _lugaresController.close();

@@ -24,7 +24,7 @@ import 'package:rdguide/pages/perfil_usuario_page.dart';
 import 'package:rdguide/pages/registro_usuario.dart';
 import 'package:rdguide/pages/seguridad_page.dart';
 import 'package:rdguide/pages/cambiar_pass.dart';
-import 'package:rdguide/widgets/foto_lugar.dart';
+import 'package:rdguide/widgets/card_lugar.dart';
 
 
 
@@ -53,7 +53,7 @@ import 'package:rdguide/widgets/foto_lugar.dart';
       '/guia1'            : (BuildContext context)   => Guia1Page(),
       '/guia2'            : (BuildContext context)   => Guia2Page(),
       '/guia3'            : (BuildContext context)   => Guia3Page(),
-      '/detalleLugar'     : (BuildContext context)   =>DetalleLugar(),
+      '/detalleLugar'     : (BuildContext context)   => DetalleLugar(),
       
 
 
