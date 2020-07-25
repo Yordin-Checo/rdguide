@@ -1,0 +1,34 @@
+{
+  "categorias": [
+    {
+      "id": 1,
+      "nombre": "Alojamientos",
+      "img": "assets/home.png"
+    },
+    {
+      "id": 2,
+      "nombre": "Restaurantes",
+      "img": "assets/restaurante.png"
+    },
+    {
+      "id": 3,
+      "nombre": "Excursiones",
+      "img": ""
+    },
+    {
+      "id": 4,
+      "nombre": "Monumentos",
+      "img": ""
+    },
+    {
+      "id": 5,
+      "nombre": "Balnearios",
+      "img": "assets/balnearios.png"
+    },
+    {
+      "id": 6,
+      "nombre": "Resort",
+      "img": ""
+    }
+  ]
+}

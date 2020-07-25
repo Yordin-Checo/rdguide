@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:rdguide/bloc/lugares_bloc.dart';
 import 'package:rdguide/models/lugares.dart';
+import 'package:rdguide/providers/categorias_provider.dart';
 import 'package:rdguide/widgets/swiper_widget.dart';
 
 
@@ -17,7 +18,7 @@ final bloc = LugaresBloc();
   
   @override
   Widget build(BuildContext context) {
-
+    categoriaProvider.getCategorias();
     final dynamic lugar = ModalRoute.of(context).settings.arguments;
     String idelemento = lugar?.id;
     bloc.getsLugares(idelemento);
