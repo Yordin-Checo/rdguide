@@ -31,44 +31,101 @@ String idLugar="";
     bloc.getsLugares(idelemento);
     bloc.getCategorias();
     return Scaffold(
-      appBar: AppBar(
-        
-        centerTitle: true,
-        title: Text(lugar.nombre),
 
-      ),
-     
-      body:ListView(
-          padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
-          children: <Widget>[
-            Hero(
-              tag: lugar.img.toString(),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(20.0),
-                child: FadeInImage(
-                  placeholder: AssetImage("assets/loading.gif"),
-                  image: NetworkImage("${lugar.img}"),
-                ),
+      body:Stack(
+        children: <Widget>[
+
+          Container(
+              foregroundDecoration: BoxDecoration(
+                  color: Colors.black26
               ),
-            ),        
-            SizedBox(height: 20.0),
-            _crearAcciones(bloc),
-            SizedBox(height: 20.0),
-          Text(lugar.descripcion,
-                          textAlign: TextAlign.justify,
-                          style: TextStyle(
+              height: 400,
+              child:  Hero(
+                tag: lugar.img.toString(),
+                child: FadeInImage(
+                  fit: BoxFit.cover,
+                    placeholder: AssetImage("assets/loading.gif"),
+                    image: NetworkImage("${lugar.img}"),
+                  ),
+              ),),
+
+          SingleChildScrollView(
+            padding: const EdgeInsets.only(top: 16.0,bottom: 20.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                const SizedBox(height: 280),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal:0.0),
+
+                ),
+                Row(
+                  children: <Widget>[
+                    const SizedBox(width: 16.0),
+                    Padding(
+                      padding: const EdgeInsets.only(right: 32.0),
+                      child: Text(
+                        "${lugar.nombre}",overflow: TextOverflow.ellipsis,
+                        style: TextStyle(color: Colors.white, fontSize: 28.0, fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                    Spacer(),
+                    IconButton(
+                      color: Colors.white,
+                      icon: CircleAvatar(
+                        backgroundColor: Colors.white,
+                        child: Icon(Icons.favorite_border),
+                      ) ,
+                      onPressed: () {},
+                    )
+                  ],
+                ),
+                Container(
+                  padding: const EdgeInsets.all(32.0),
+                  color: Colors.white,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.min,
+                    children: <Widget>[
+                      SizedBox(height: 20.0),
+                      _crearAcciones(bloc),
+                      SizedBox(height: 20.0),
+                      Text(lugar.descripcion,
+                        textAlign: TextAlign.justify,
+                        style: TextStyle(
                           fontSize: 12.0,
                           fontWeight: FontWeight.normal,
-                          letterSpacing: 1.5,                     
-                                          ),
-                         ),
-          SizedBox(height: 20.0),
-          _swiperLugares("Lugares Recomendados",bloc, ),
-          ],
-        ),
+                          letterSpacing: 1.5,
+                        ),
+                      ),
+                      SizedBox(height: 20.0),
+                      _swiperLugares("Lugares Recomendados",bloc, ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+
+          Positioned(
+            top: 0,
+            left: 0,
+            right: 0,
+            child: AppBar(
+              backgroundColor: Colors.transparent,
+              elevation: 0,
+              centerTitle: true,
+            ),
+          ),
+        ],
+      ),
     );
     
   }
+
+
+
+
 void irDestino(dynamic destino){
     Navigator.pushNamed(context, '/portadaLugar',arguments: destino);
 }

@@ -11,6 +11,8 @@ import 'package:rdguide/pages/detalle_page.dart';
 import 'package:rdguide/pages/guia2_turs.dart';
 import 'package:rdguide/pages/guia3_trus.dart';
 import 'package:rdguide/pages/guia_turs1.dart';
+import 'package:rdguide/pages/hotel_habitaciones_page.dart';
+import 'package:rdguide/pages/hotel_page.dart';
 import 'package:rdguide/pages/main_pages/lugaresporcat_page.dart';
 import 'package:rdguide/pages/pagar_reservacion.dart';
 import 'package:rdguide/pages/root_page.dart';
@@ -54,6 +56,8 @@ import 'package:rdguide/widgets/card_lugar.dart';
       '/guia2'            : (BuildContext context)   => Guia2Page(),
       '/guia3'            : (BuildContext context)   => Guia3Page(),
       '/detalleLugar'     : (BuildContext context)   => DetalleLugar(),
+      '/hotel'            : (BuildContext context)   => HotelPage(),
+      '/hotel/areas' : (BuildContext context)   => HotelAreasPage(),
       
 
 

@@ -46,12 +46,25 @@ Widget listaLugares(LugaresCategoriaBloc bloc){
               itemCount: data.length,
               itemBuilder: (BuildContext context, int index) {
                 final lugar = data[index];
-                return CardLugar(lugar);
+                return GestureDetector(
+                  onTap: (){onClickItem(lugar);},
+                    child: CardLugar(lugar)
+                );
               },
             );}
           }else{
             return Center(child: CircularProgressIndicator());
           }
         });
+}
+void onClickItem(Lugar lugar){
+
+    switch(lugar.idcategoria){
+      case "1":{
+          Navigator.pushNamed(context, '/hotel',arguments: lugar);
+        break;
+      }
+    }
+
 }
 }

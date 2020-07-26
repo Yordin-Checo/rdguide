@@ -15,6 +15,7 @@ class AreasBloc implements Bloc{
 
   void getsAreas(String area) async{
     final result = await areasProvider.getAreas(area);
+    print(result);
     _areasSink(result);
 
   }

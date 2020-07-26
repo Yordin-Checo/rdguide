@@ -1,6 +1,6 @@
 class Area {
     Area({
-        this.idarea,
+        this.id,
         this.nombre,
         this.descripcion,
         this.caracteristicas,
@@ -9,7 +9,7 @@ class Area {
         this.img,
     });
 
-    String idarea;
+    String id;
     String nombre;
     String descripcion;
     String caracteristicas;
@@ -18,7 +18,7 @@ class Area {
     String img;
 
     factory Area.fromJson(Map<String, dynamic> json) => Area(
-        idarea: json["idarea"],
+        id: json["idarea"],
         nombre: json["nombre"],
         descripcion: json["descripcion"],
         caracteristicas: json["caracteristicas"],
@@ -28,7 +28,7 @@ class Area {
     );
 
     Map<String, dynamic> toJson() => {
-        "idarea": idarea,
+        "idarea": id,
         "nombre": nombre,
         "descripcion": descripcion,
         "caracteristicas": caracteristicas,
@@ -36,4 +36,9 @@ class Area {
         "precioreserva": precioreserva,
         "img": img,
     };
+
+    @override
+  String toString() {
+    return 'Area{id: $id, nombre: $nombre, descripcion: $descripcion, caracteristicas: $caracteristicas, idlugar: $idlugar, precioreserva: $precioreserva, img: $img}';
+  }
 }

@@ -1,7 +1,7 @@
 
 class Lugar {
     Lugar({
-        this.idlugar,
+        this.id,
         this.idciudad,
         this.nombre,
         this.descripcion,
@@ -14,7 +14,7 @@ class Lugar {
         this.img,
     });
 
-    String idlugar;
+    String id;
     String idciudad;
     String nombre;
     String descripcion;
@@ -27,7 +27,7 @@ class Lugar {
     String img;
 
     factory Lugar.fromJson(Map<String, dynamic> json) => Lugar(
-        idlugar: json["idlugar"],
+        id: json["idlugar"],
         idciudad: json["idciudad"],
         nombre: json["nombre"],
         descripcion: json["descripcion"],
@@ -41,7 +41,7 @@ class Lugar {
     );
 
     Map<String, dynamic> toJson() => {
-        "idlugar": idlugar,
+        "idlugar": id,
         "idciudad": idciudad,
         "nombre": nombre,
         "descripcion": descripcion,

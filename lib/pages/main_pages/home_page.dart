@@ -35,8 +35,8 @@ class HomePageState extends State<HomePage>{
             title: Text("Favoritos")
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.notifications_none),
-            title: Text("Notificaciones")
+            icon: Icon(Icons.calendar_today),
+            title: Text("Reservas")
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.menu),
