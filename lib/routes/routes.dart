@@ -33,7 +33,6 @@ import 'package:rdguide/widgets/card_lugar.dart';
   Map <String, WidgetBuilder> getAplicationRoutes() {
     return <String, WidgetBuilder>{
       '/login'            : (BuildContext context)   => LoginPage(),
-      '/'                 : (BuildContext context)   => HomePage(),
       '/home'             : (BuildContext context)   => HomePage(),
       '/register'         : (BuildContext context)   => RegistroUsuarioPage(),
       '/cuenta'           : (BuildContext context)   => PerfilPage(),

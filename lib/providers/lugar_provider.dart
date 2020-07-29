@@ -5,6 +5,7 @@ import 'dart:convert';
 import 'package:rdguide/models/lugares.dart';
 import 'package:rdguide/providers/utils_provider.dart';
 import 'package:http/http.dart' as http;
+import 'package:rdguide/services/shared_preferences.dart';
 
 
  
@@ -44,8 +45,9 @@ class _LugaresProvider {
     final lugaresList = List<Lugar>();
 
     final url = Uri.http(_url,"/GetLugarPorCategoria/${categoria},${destino}");
-    print(url);
-    final Map<String,String> header = {"Token":"12235"};
+
+    final token = await sharedPreferences.getToken();
+    final Map<String,String> header = {"Token":token};
 
     final resp = await http.get(url,headers: header);
 

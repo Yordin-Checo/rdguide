@@ -3,6 +3,7 @@ import 'dart:convert';
 
 import 'package:rdguide/models/publicidad.dart';
 import 'package:http/http.dart' as http;
+import 'package:rdguide/services/shared_preferences.dart';
 
 class _PublicidadProvider {
 
@@ -16,7 +17,8 @@ class _PublicidadProvider {
     final publicidad = List<Publicidad>();
 
     final url = Uri.http(_url,"/GetPublicidad");
-    final headers = {"Token":"12345"};
+    final token = await sharedPreferences.getToken();
+    final headers = {"Token":token};
 
     final resp = await http.get(url,headers: headers);
 

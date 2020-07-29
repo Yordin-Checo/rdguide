@@ -4,6 +4,7 @@ import 'dart:convert';
 import 'package:rdguide/models/eventos.dart';
 import 'package:rdguide/providers/utils_provider.dart';
 import 'package:http/http.dart' as http;
+import 'package:rdguide/services/shared_preferences.dart';
 
 class _EventosProvider {
 
@@ -11,11 +12,14 @@ class _EventosProvider {
 
   final _url = UtilProvider.getUrl;
 
+
   Future<List<Evento>> getEventosPrincipales() async{
     final eventosList = List<Evento>();
 
     final url = Uri.http(_url,"/GetEventos");
-    final Map<String,String> header = {"Token":"12235"};
+    final token = await sharedPreferences.getToken();
+
+    final Map<String,String> header = {"Token":token};
 
     final resp = await http.get(url,headers: header);
 

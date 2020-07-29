@@ -1,6 +1,7 @@
 import 'package:rdguide/pages/main_pages/favoritos_page.dart';
 import 'package:flutter/material.dart';
 import 'package:rdguide/pages/main_pages/inicio_page.dart';
+import 'package:rdguide/providers/login_provider.dart';
 import '../configuracion_page.dart';
 
 class HomePage extends StatefulWidget{
@@ -14,7 +15,6 @@ class HomePageState extends State<HomePage>{
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         onPressed: (){

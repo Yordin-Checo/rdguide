@@ -1,39 +1,45 @@
 
 import 'dart:async';
+import 'dart:convert';
 
-import 'package:rdguide/services/authenticator.dart';
-import 'package:rdguide/services/shared_preferences.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:rdguide/models/usuario.dart';
+import 'package:http/http.dart' as http;
+import 'package:rdguide/providers/utils_provider.dart';
 
 class _loginProvider {
 
-  _loginProvider(){
-    isLogged();
-  }
-
-  final _loginStreamController = StreamController<bool>.broadcast();
-
-  Function(bool) get loginSink  => _loginStreamController.sink.add;
-  Stream<bool> get loginStream => _loginStreamController.stream;
-
-  void ondispose(){
-    _loginStreamController.close();
-  }
-
-
-
+  final _url = UtilProvider.getUrl;
 
   Future<bool> isLogged() async{
-    bool spLogged = await sharedPreferences.isLogged();
-    if(spLogged == null) spLogged = false;
-    if(spLogged){
-      bool fbLogged = await authenticator.isLoggedFirebase();
-      loginSink(fbLogged);
-      return fbLogged;
-    }else {
-      loginSink(spLogged);
-      return spLogged;}
+
   }
 
+  Future<Usuario> getUsuario() async{
+
+  }
+
+  Future<Usuario> login({@required String correo,@required String clave}) async{
+     Usuario usuario = Usuario();
+
+    final url = Uri.http(_url, "/GetAcceso/$correo,$clave");
+
+    final resp = await http.get(url);
+
+    if(resp.statusCode == 200){
+      final dataJson = resp.body;
+
+      final dataMap = json.decode(dataJson);
+      print(dataMap['item1']);
+      usuario = Usuario.fromJson(dataMap['item2'][0]);
+      print(usuario);
+    }
+    return usuario;
+
+  }
+  Future<Usuario> registro(Usuario usuario) async{
+
+  }
 
 }
 final loginProvider = new _loginProvider();

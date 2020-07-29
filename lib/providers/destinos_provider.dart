@@ -5,6 +5,7 @@ import 'dart:convert';
 import 'package:rdguide/models/destino.dart';
 import 'package:http/http.dart' as http;
 import 'package:rdguide/providers/utils_provider.dart';
+import 'package:rdguide/services/shared_preferences.dart';
 
 class _DestinosProvider{
 
@@ -39,8 +40,8 @@ class _DestinosProvider{
       List<Destino> _destinosPopulares = new List();
 
       final url = Uri.http(_url, "/GetDestinosPopulares");
-
-      final Map<String,String> header = {"Token":"12345"};
+      final token = await sharedPreferences.getToken();
+      final Map<String,String> header = {"Token":token};
 
       final resp = await http.get(url,headers: header);
 
