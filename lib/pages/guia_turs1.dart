@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class PerfilnuevaPage extends StatelessWidget {
   // static final String path = "lib/src/pages/profile/profile3.dart";
@@ -192,6 +193,29 @@ class PerfilnuevaPage extends StatelessWidget {
                               )),
                           leading: Icon(Icons.language),
                         ),
+                        Container(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              Icon(
+                                FontAwesomeIcons.facebook,
+                                size: 40,
+                                color: Colors.blue[800],
+                              ),
+                              Icon(
+                                FontAwesomeIcons.twitter,
+                                size: 40,
+                                color: Colors.blue,
+                              ),
+                              Icon(
+                                FontAwesomeIcons.instagram,
+                                size: 40,
+                                color: Colors.orange,
+                              )
+                            ],
+                          ),
+                        ),
+                        SizedBox(height: 10.0),
                       ],
                     ),
                   ),
