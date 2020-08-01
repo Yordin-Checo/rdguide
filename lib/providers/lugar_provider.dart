@@ -23,7 +23,8 @@ class _LugaresProvider {
 
     final url = Uri.http(_url,"/Getlugar/R,${destino}");
     print(url);
-    final Map<String,String> header = {"Token":"12235"};
+    final token = await sharedPreferences.getToken();
+    final Map<String,String> header = {"Token":token};
 
     final resp = await http.get(url,headers: header);
 

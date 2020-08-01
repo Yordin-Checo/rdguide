@@ -15,7 +15,6 @@ import 'package:rdguide/pages/hotel_habitaciones_page.dart';
 import 'package:rdguide/pages/hotel_page.dart';
 import 'package:rdguide/pages/main_pages/lugaresporcat_page.dart';
 import 'package:rdguide/pages/pagar_reservacion.dart';
-import 'package:rdguide/pages/root_page.dart';
 import 'package:rdguide/pages/termino_servicio_page.dart';
 import 'package:flutter/material.dart';
 import 'package:rdguide/pages/main_pages/home_page.dart';
@@ -26,7 +25,8 @@ import 'package:rdguide/pages/perfil_usuario_page.dart';
 import 'package:rdguide/pages/registro_usuario.dart';
 import 'package:rdguide/pages/seguridad_page.dart';
 import 'package:rdguide/pages/cambiar_pass.dart';
-import 'package:rdguide/widgets/card_lugar.dart';
+import 'package:rdguide/pages/detalle_evento.dart';
+
 
 
 
@@ -56,8 +56,8 @@ import 'package:rdguide/widgets/card_lugar.dart';
       '/guia3'            : (BuildContext context)   => Guia3Page(),
       '/detalleLugar'     : (BuildContext context)   => DetalleLugar(),
       '/hotel'            : (BuildContext context)   => HotelPage(),
-      '/hotel/areas' : (BuildContext context)   => HotelAreasPage(),
-      
+      '/hotel/areas'      : (BuildContext context)   => HotelAreasPage(),
+      'evento'            : (BuildContext context)   => EventoPage(),
 
 
       

@@ -13,7 +13,7 @@ class EventosBloc implements Bloc{
   Stream<List<Evento>> get eventosPrincipalesStream => _eventosPrincipalesController.stream;
 
 
-  void getEventosPrincipales() async{
+  void getEventosPrincipales(String evento) async{
     final result = await eventosProvider.getEventosPrincipales();
     _eventosPrincipalesSink(result);
 

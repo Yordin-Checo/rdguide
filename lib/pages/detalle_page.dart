@@ -81,7 +81,7 @@ String idLugar="";
                   ],
                 ),
                 Container(
-                  padding: const EdgeInsets.all(32.0),
+                  
                   color: Colors.white,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -90,12 +90,13 @@ String idLugar="";
                       SizedBox(height: 20.0),
                       _crearAcciones(bloc),
                       SizedBox(height: 20.0),
-                      Text(lugar.descripcion,
-                        textAlign: TextAlign.justify,
-                        style: TextStyle(
-                          fontSize: 12.0,
-                          fontWeight: FontWeight.normal,
-                          letterSpacing: 1.5,
+                      Padding(
+                        padding: const EdgeInsets.only(right: 16, left: 16),
+                        child: Text(lugar.descripcion,
+                          textAlign: TextAlign.justify, style: TextStyle(
+                          fontWeight: FontWeight.w300,
+                          fontSize: 15.0
+                      ),
                         ),
                       ),
                       SizedBox(height: 20.0),
@@ -127,7 +128,7 @@ String idLugar="";
 
 
 void irDestino(dynamic destino){
-    Navigator.pushNamed(context, '/portadaLugar',arguments: destino);
+    Navigator.pushNamed(context, '/hotel',arguments: destino);
 }
 
 
