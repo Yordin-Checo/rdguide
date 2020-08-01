@@ -163,7 +163,7 @@ Widget _crearAcciones(LugaresBloc bloc){
               _accion(lista.firstWhere((e) => e.id ==1)),
               _accion(lista.firstWhere((e) => e.id ==2)),
               _accion(lista.firstWhere((e) => e.id ==5)),
-              _accion(lista.firstWhere((e) => e.id ==1)),
+              _accion(lista.firstWhere((e) => e.id ==2)),
             ],
         );
       }else{
