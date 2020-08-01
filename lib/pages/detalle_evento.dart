@@ -1,8 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:rdguide/bloc/eventos_bloc.dart';
-import 'package:rdguide/models/eventos.dart';
-import 'package:rdguide/widgets/swiper_widget.dart';
+
 
 
 
@@ -115,7 +114,7 @@ String idLugar="";
                               horizontal: 60.0,
                             ),
                             onPressed: () {
-                              Navigator.of(context).pushNamed('/hotel/areas',);},
+                              null;/*Navigator.of(context).pushNamed();*/},
                           ),
                 )
               ],
