@@ -52,7 +52,7 @@ class _HotelPageState extends State<HotelPage> {
                           color: Colors.grey,
                           borderRadius: BorderRadius.circular(20.0)),
                       child: Text(
-                        "8.4/85 reviews",
+                        "8.4/85 opiniones",
                         style: TextStyle(color: Colors.white, fontSize: 13.0),
                       ),
                     ),
@@ -107,7 +107,7 @@ class _HotelPageState extends State<HotelPage> {
                                       child: Icon(Icons.location_on, size: 16.0, color: Colors.grey,)
                                   ),
                                   TextSpan(
-                                      text: "8 km to centrum"
+                                      text: "8 km del centro"
                                   )
                                 ]), style: TextStyle(color: Colors.grey, fontSize: 12.0),)
                               ],

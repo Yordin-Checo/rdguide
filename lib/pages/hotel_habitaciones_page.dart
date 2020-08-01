@@ -73,7 +73,11 @@ class _HotelAreasPageState extends State<HotelAreasPage> {
                 children: <Widget>[
                   Stack(
                     children: <Widget>[
-                      Image.network(area.img),
+                      GestureDetector(
+                      onTap: (){
+                        Navigator.of(context).pushNamed("detallearea");
+                      } , 
+                      child: Image.network(area.img)),
                       Positioned(
                         bottom: 20.0,
                         right: 10.0,
