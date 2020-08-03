@@ -18,10 +18,10 @@ class _AreasProvider {
 
   final _url = UtilProvider.getUrl;
 
-  Future<List<Area>> getAreas(String area) async{
+  Future<List<Area>> getAreas(String lugar) async{
     final areasList = List<Area>();
 
-    final url = Uri.http(_url,"/GetAreas/area,3");
+    final url = Uri.http(_url,"/GetAreas/area,${lugar}");
 
     final token = await sharedPreferences.getToken();
 

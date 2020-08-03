@@ -153,8 +153,7 @@ class _HotelPageState extends State<HotelPage> {
                             horizontal: 32.0,
                           ),
                           onPressed: () {
-                            Navigator.of(context)
-                                .pushNamed('/hotel/areas', arguments: lugar);
+                            Navigator.of(context).pushNamed('/hotel/areas', arguments: lugar);
                           },
                         ),
                       ),

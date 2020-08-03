@@ -76,3 +76,7 @@ void onClickItem(Lugar lugar){
 
 }
 }
+
+
+
+

@@ -8,8 +8,6 @@ import 'package:rdguide/pages/credi_card_home.dart';
 import 'package:rdguide/pages/detalle_lugar.dart';
 import 'package:rdguide/pages/detalle_page.dart';
 import 'package:rdguide/pages/google_map.dart';
-import 'package:rdguide/pages/guia2_turs.dart';
-import 'package:rdguide/pages/guia3_trus.dart';
 import 'package:rdguide/pages/guia_turs1.dart';
 import 'package:rdguide/pages/hotel_detalle_area.dart';
 import 'package:rdguide/pages/hotel_habitaciones_page.dart';
@@ -50,9 +48,6 @@ Map<String, WidgetBuilder> getAplicationRoutes() {
     '/cancelacion': (BuildContext context) => CancelacionPage(),
     '/comofunciona': (BuildContext context) => Comofunciona(),
     '/pagareserva': (BuildContext context) => PagarReserva(),
-    '/guia1': (BuildContext context) => Guia1Page(),
-    '/guia2': (BuildContext context) => Guia2Page(),
-    '/guia3': (BuildContext context) => Guia3Page(),
     '/detalleLugar': (BuildContext context) => DetalleLugar(),
     '/hotel': (BuildContext context) => HotelPage(),
     '/hotel/areas': (BuildContext context) => HotelAreasPage(),

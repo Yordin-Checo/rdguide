@@ -19,7 +19,7 @@ class _HotelAreasPageState extends State<HotelAreasPage> {
     @override
     Widget build(BuildContext context) {
       final Lugar lugar = ModalRoute.of(context).settings.arguments;
-      bloc.getsAreas("3");
+      bloc.getsAreas(lugar.id);
       return Scaffold(
         appBar: AppBar(
           centerTitle: true,

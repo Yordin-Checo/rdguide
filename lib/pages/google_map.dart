@@ -1,138 +1,74 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:geolocator/geolocator.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class MapaG extends StatefulWidget {
   @override
-  _MapaG createState() => _MapaG();
+  MapaGState createState() => MapaGState();
 }
 
-class _MapaG extends State {
-  //Latitud y longitud, cambiala a tu ubicacion...
-  LatLng posicionAct = LatLng(19.3819089, -70.3804742);
-  TextEditingController locationController = TextEditingController();
-  GoogleMapController _mapController;
-  bool buscandoUbi = false;
-  String header = "";
+class MapaGState extends State<MapaG> {
+  Completer<GoogleMapController> _controller = Completer();
 
-  Future<void> getMoveCamera() async {
-    List<Placemark> placemark = await Geolocator()
-        .placemarkFromCoordinates(posicionAct.latitude, posicionAct.longitude);
-    locationController.text = placemark[0].name;
-    setState(() {
-      header = placemark[0].name.toString();
-    });
+  @override
+  void initState() {
+    super.initState();
   }
-
-//obtener la ubicacion del usuario
-  void getUserUbicacion() async {
-    Position posicion = await Geolocator()
-        .getCurrentPosition(desiredAccuracy: LocationAccuracy.high);
-    List<Placemark> placemarker = await Geolocator()
-        .placemarkFromCoordinates(posicion.latitude, posicion.longitude);
-    posicionAct = LatLng(posicion.latitude, posicion.longitude);
-    locationController.text = placemarker[0].name;
-    _mapController.animateCamera(CameraUpdate.newLatLng(posicionAct));
-  }
-
-//funcion para crear el mapa
-  void onCreated(GoogleMapController controller) {
-    _mapController = controller;
-  }
-
-  void onCameraMove(CameraPosition position) async {
-    setState(() {});
-    buscandoUbi = true;
-    posicionAct = position.target;
-  }
-
+    double zoomVal=5.0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.blue,
-          title: Text(
-            "Mapa",
-            textAlign: TextAlign.center,
-          ),
-        ),
-        body: SafeArea(
-          child: Stack(
-            children: <Widget>[
-              GoogleMap(
-                initialCameraPosition: CameraPosition(
-                  target: posicionAct,
-                  zoom: 16,
-                ),
-                //boton de zoom + -
-                zoomControlsEnabled: true,
-                //tipo de mapa
-                mapType: MapType.normal,
-                zoomGesturesEnabled: true,
-                myLocationEnabled: true,
-                myLocationButtonEnabled: true,
-                onCameraMove: onCameraMove,
-                //aqui se llama la funcion para el mapa
-                onMapCreated: onCreated,
-                onCameraIdle: () async {
-                  buscandoUbi = true;
-                  setState(() {});
-                  getMoveCamera();
-                },
-              ),
-              Align(
-                alignment: Alignment.center,
-                //Aqui puedes cambiar la foto del marker
-                child: Image.asset("assets/makeruser.png", height: 55),
-              ),
-              buscandoUbi == true
-                  ? Positioned(
-                      //Posicion del texto
-                      top: MediaQuery.of(context).size.height / 3.45,
-                      left: MediaQuery.of(context).size.width / 4.10,
-                      child: Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(12.0),
-                          color: Colors.black.withOpacity(0.75),
-                        ),
-                        width: 200,
-                        height: 50,
-                        child: Center(
-                          child: Text(
-                            "$header",
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 20,
-                            ),
-                          ),
-                        ),
-                      ),
-                    )
-
-                  //Espacio donde se vizualisara el texto en donde estas
-                  : Positioned(
-                      top: MediaQuery.of(context).size.height / 3.45,
-                      left: MediaQuery.of(context).size.width / 3.62,
-                      child: Container(
-                        padding:
-                            EdgeInsets.symmetric(horizontal: 17, vertical: 12),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(12.0),
-                          color: Colors.black.withOpacity(0.75),
-                        ),
-                        width: 50,
-                        height: 40,
-                        child: Center(
-                          child: CircularProgressIndicator(
-                            valueColor: AlwaysStoppedAnimation(Colors.white),
-                            strokeWidth: 2.5,
-                          ),
-                        ),
-                      ),
-                    ),
-            ],
-          ),
-        ));
+      appBar: AppBar(
+        leading: IconButton(
+            icon: Icon(FontAwesomeIcons.arrowLeft),
+            onPressed: () {
+              Navigator.pop(context);
+            }),
+            centerTitle: true,
+        title: Text("República Dominican"),
+        actions: <Widget>[
+          
+        ],
+      ),
+      body: Stack(
+        children: <Widget>[
+          _buildGoogleMap(context),
+         // _zoomminusfunction(),
+          //_zoomplusfunction(),
+          
+        ],
+      ),
+    );
   }
+
+ 
+
+ /*Future<void> _minus(double zoomVal) async {
+    final GoogleMapController controller = await _controller.future;
+    controller.animateCamera(CameraUpdate.newCameraPosition(CameraPosition(target: LatLng(40.712776, -74.005974), zoom: zoomVal)));
+  }
+  Future<void> _plus(double zoomVal) async {
+    final GoogleMapController controller = await _controller.future;
+    controller.animateCamera(CameraUpdate.newCameraPosition(CameraPosition(target: LatLng(40.712776, -74.005974), zoom: zoomVal)));
+  }*/
+
+  Widget _buildGoogleMap(BuildContext context) {
+    return Container(
+      height: MediaQuery.of(context).size.height,
+      width: MediaQuery.of(context).size.width,
+      child: GoogleMap(
+        mapType: MapType.normal,
+        initialCameraPosition:  CameraPosition(target: LatLng(19.140372, -70.6321897), zoom: 17),
+        onMapCreated: (GoogleMapController controller) {
+          _controller.complete(controller);
+        },
+       
+      ),
+    );
+  }
+
+ 
 }
+
+
