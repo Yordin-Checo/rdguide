@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+ 
 
 class OpcionGuiasPage extends StatefulWidget {
   @override
@@ -6,102 +7,82 @@ class OpcionGuiasPage extends StatefulWidget {
 }
 
 class _OpcionGuiasPage extends State<OpcionGuiasPage> {
-  @override
+
+ @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
-        backgroundColor: Colors.green,
-        title: Text(
-          'Guias',
-          // style: TextStyle(color: Colors.black),
-          // textAlign: TextAlign.center,
+        title: Text('Guias'),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: (){
+            Navigator.pop(context);
+          },
         ),
-        // elevation: 0,
-        // leading: IconButton(
-        //   icon: Icon(
-        //     Icons.arrow_back,
-        //     color: Colors.black,
-        //   ),
-        //   onPressed: () {
-        //     Navigator.pop(context);
-        //   },
-        // ),
       ),
       body: ListView(
-        padding: EdgeInsets.only(top: 10.0),
-        children: <Widget>[
-          SizedBox(height: 20.0),
-          _guia1(),
-          Divider(),
-          _guia2(),
-          Divider(),
-          _guia3(),
+  children:  <Widget>[
+       Card(
+            child: ListTile(
+              leading: Icon(Icons.person, color: Colors.blue,),
+              title: Text('Argeni Estevez'),
+              onTap: (){
+                Navigator.pushNamed(context, '/guia1');
+              },
+              //subtitle: Text('Breve descripción'),
+              //trailing: Icon(Icons.more_vert),                    
+            ), 
+      ),
+       Card(
+            child: ListTile(
+              leading: Icon(Icons.person, color: Colors.green,),
+              title: Text('Joel Miese'),
+              onTap: (){
+                Navigator.pushNamed(context, '/guia2');
+              },
+              //subtitle: Text('Breve descripción'),
+              //trailing: Icon(Icons.more_vert),                    
+            ), 
+      ),
+       Card(
+            child: ListTile(
+              leading: Icon(Icons.person, color: Colors.purple,),
+              title: Text('Ricardo Rosario'),
+              onTap: (){
+                Navigator.pushNamed(context, '/guia3');
+              },
+              //subtitle: Text('Breve descripción'),
+              //trailing: Icon(Icons.more_vert),                    
+            ), 
+      ),
+      Card(
+            child: ListTile(
+              leading: Icon(Icons.person, color: Colors.red,),
+              title: Text('Luis Jimenes'),
+              onTap: (){
+                Navigator.pushNamed(context, '/guia3');
+              },
+              //subtitle: Text('Breve descripción'),
+              //trailing: Icon(Icons.more_vert),                    
+            ), 
+      ),
+      Card(
+            child: ListTile(
+              leading: Icon(Icons.person, color: Colors.orange,),
+              title: Text('Samuel Canela'),
+              onTap: (){
+                Navigator.pushNamed(context, '/guia3');
+              },
+              //subtitle: Text('Breve descripción'),
+              //trailing: Icon(Icons.more_vert),                    
+            ), 
+      ),
+
+       
+   
         ],
-      ),
+      )       
     );
   }
 
-  _guia1() {
-    return Container(
-      width: double.infinity,
-      height: 50.0,
-      child: FlatButton(
-        textColor: Colors.black,
-        splashColor: Colors.grey,
-        onPressed: () {
-          Navigator.pushNamed(context, '/guia1');
-        },
-        //icon: Icon(Icons.vpn_key),
-        child: Align(
-            alignment: Alignment.topLeft,
-            child: Text(
-              "Argeny Estévez",
-              style: TextStyle(fontSize: 18.0),
-            )),
-      ),
-    );
-  }
-
-  _guia2() {
-    return Container(
-      width: double.infinity,
-      height: 50.0,
-      child: FlatButton(
-        textColor: Colors.black,
-        splashColor: Colors.grey,
-        onPressed: () {
-          Navigator.pushNamed(context, '/guia2');
-        },
-        //icon: Icon(Icons.vpn_key),
-        child: Align(
-            alignment: Alignment.topLeft,
-            child: Text(
-              "Joel Mieses",
-              style: TextStyle(fontSize: 18.0),
-            )),
-      ),
-    );
-  }
-
-  _guia3() {
-    return Container(
-      width: double.infinity,
-      height: 50.0,
-      child: FlatButton(
-        textColor: Colors.black,
-        splashColor: Colors.grey,
-        onPressed: () {
-          Navigator.pushNamed(context, '/guia3');
-        },
-        //icon: Icon(Icons.vpn_key),
-        child: Align(
-            alignment: Alignment.topLeft,
-            child: Text(
-              "Ricardo Rosario",
-              style: TextStyle(fontSize: 18.0),
-            )),
-      ),
-    );
-  }
 }

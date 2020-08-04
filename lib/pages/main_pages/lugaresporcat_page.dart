@@ -69,7 +69,11 @@ void onClickItem(Lugar lugar){
         break;
       }
       case "5":{
-          Navigator.pushNamed(context, 'evento',arguments: lugar);
+          Navigator.pushNamed(context, '/evento',arguments: lugar);
+        break;
+      }
+      case "7":{
+          Navigator.pushNamed(context, '/evento',arguments: lugar);
         break;
       }
     }

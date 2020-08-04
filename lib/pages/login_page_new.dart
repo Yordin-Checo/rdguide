@@ -1,11 +1,10 @@
 
 import 'package:rdguide/bloc/bloc_provider.dart';
 import 'package:rdguide/bloc/login_bloc.dart';
-import 'package:rdguide/models/usuario.dart';
 import 'package:rdguide/services/authenticator.dart';
 import 'package:flutter/material.dart';
 import 'recuperar_pass.dart';
-
+import 'package:rdguide/models/usuario.dart';
 
 class LoginPage extends StatefulWidget{
   @override

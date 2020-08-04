@@ -14,7 +14,7 @@ class _RecuperarPage extends State<RecuperarPage> {
         title: Text('Recuperar Contraseña'),
       ),
       body: ListView(
-        padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 20.0,),
+        padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 20.0,),
         children: <Widget>[
           _recuperarPass(),
           SizedBox(height:30.0),
@@ -37,7 +37,7 @@ class _RecuperarPage extends State<RecuperarPage> {
         //Text("Olvidaste tu contraseña",style: TextStyle(fontSize: 26,fontWeight: FontWeight.bold),),
         SizedBox(height: 6,),
         Text("Favor de introducir su correo eléctronico le llegara un mensaje de restablecimiento de contraseña.",
-        style: TextStyle(fontSize: 20,color: Colors.black87),
+        style: TextStyle(fontSize: 16,color: Colors.black87),
         textAlign: TextAlign.justify,
         ),
       ],
@@ -74,7 +74,7 @@ class _RecuperarPage extends State<RecuperarPage> {
         borderRadius: BorderRadius.circular(15.0)
       ),
       elevation: 0.0,
-      color: Colors.blue,
+      color: Colors.green,
       textColor: Colors.white,
       onPressed: (){
 

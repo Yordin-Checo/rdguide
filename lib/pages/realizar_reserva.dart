@@ -22,7 +22,7 @@ class _RealizarReservaPageState extends State<RealizarReservaPage> {
       ),
       body: Center(
         child: ListView(
-          padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 20.0,),
+          padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 20.0,),
           children: <Widget>[
             //aqui se crean los metodos
             _nombreInput(),
@@ -52,9 +52,9 @@ class _RealizarReservaPageState extends State<RealizarReservaPage> {
           borderRadius: BorderRadius.circular(20.0)
         ),
         hintText: 'Nombre Completo',
-        labelText: 'Nombre Completo',
-        suffixIcon: Icon(Icons.accessibility),
-        icon: Icon(Icons.account_circle)
+        //labelText: 'Nombre Completo',
+        suffixIcon: Icon(Icons.account_circle),
+        //icon: Icon(Icons.account_circle)
         
       ),
     );
@@ -72,9 +72,9 @@ class _RealizarReservaPageState extends State<RealizarReservaPage> {
           borderRadius: BorderRadius.circular(20.0)
         ),
         hintText: 'Teléfono',
-        labelText: 'Teléfono',
+        //labelText: 'Teléfono',
         suffixIcon: Icon(Icons.phone),
-        icon: Icon(Icons.phone_iphone)
+        //icon: Icon(Icons.phone_iphone)
         
       ),
     );
@@ -92,7 +92,7 @@ class _RealizarReservaPageState extends State<RealizarReservaPage> {
           ),
           labelText: 'Fecha de Reservación',
           suffixIcon: Icon(Icons.calendar_today),
-          icon: Icon(Icons.calendar_today)
+         // icon: Icon(Icons.calendar_today)
           
         ),
         //aqui lo que hacemos es que cuando se haga click en el boton llame al metodo _selectDate para que 
@@ -134,8 +134,9 @@ class _RealizarReservaPageState extends State<RealizarReservaPage> {
           borderRadius: BorderRadius.circular(20.0)
         ),
         hintText: 'Descripción',
-        labelText: 'Requerimiento Especial',
-        icon: Icon(Icons.library_books)
+        suffixIcon: Icon(Icons.message),
+        //labelText: 'Requerimiento Especial',
+        //icon: Icon(Icons.library_books)
       ),
       maxLines: 3,
     );

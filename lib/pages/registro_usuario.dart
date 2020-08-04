@@ -18,7 +18,7 @@ class _RegistroUsuarioPageState extends State<RegistroUsuarioPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Registrar Usuario'),
-
+        backgroundColor: Colors.green,
         
       ),
       body: ListView(
@@ -56,8 +56,8 @@ class _RegistroUsuarioPageState extends State<RegistroUsuarioPage> {
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(20.0)
         ),
-        hintText: 'Nombre',
-        labelText: 'Nombre',
+        hintText: 'Nombres',
+        //labelText: 'Nombre',
         prefixIcon: Icon(
           Icons.account_circle,
            color: Colors.grey,
@@ -76,8 +76,8 @@ class _RegistroUsuarioPageState extends State<RegistroUsuarioPage> {
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(20.0)
         ),
-        hintText: 'Apellido',
-        labelText: 'Apellido',
+        hintText: 'Apellidos',
+        //labelText: 'Apellido',
         prefixIcon: Icon(
           Icons.account_circle,
            color: Colors.grey,
@@ -184,7 +184,7 @@ class _RegistroUsuarioPageState extends State<RegistroUsuarioPage> {
             borderRadius: BorderRadius.circular(20.0)
           ),
           hintText: 'xxxxx@ejemplo.com',
-          labelText: 'Email',
+         // labelText: 'Email',
           prefixIcon: Icon(
           Icons.email,
            color: Colors.grey,
@@ -205,7 +205,7 @@ class _RegistroUsuarioPageState extends State<RegistroUsuarioPage> {
             borderRadius: BorderRadius.circular(20.0)
           ),
           hintText: 'Contraseña',
-          labelText: 'Contraseña',
+          //labelText: 'Contraseña',
           prefixIcon: Icon(
           Icons.lock,
            color: Colors.grey,
@@ -225,7 +225,7 @@ class _RegistroUsuarioPageState extends State<RegistroUsuarioPage> {
             borderRadius: BorderRadius.circular(20.0)
           ),
           hintText: 'Confirmar Contraseña',
-          labelText: 'Confirmar Contraseña',
+          //labelText: 'Confirmar Contraseña',
           prefixIcon: Icon(
           Icons.lock,
            color: Colors.grey,
@@ -247,7 +247,7 @@ class _RegistroUsuarioPageState extends State<RegistroUsuarioPage> {
         borderRadius: BorderRadius.circular(15.0)
       ),
       elevation: 0.0,
-      color: Colors.blue,
+      color: Colors.green,
       textColor: Colors.white,
       onPressed: (){
 
@@ -266,6 +266,7 @@ class RadioButton extends StatelessWidget {
     return MaterialApp(
       title: _title,
       home: Scaffold(
+        
         appBar: AppBar(title: const Text(_title)),
         body: Center(
           child: MyStatefulWidget(),
@@ -293,7 +294,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
       children: <Widget>[
         Text('Sexo: ', style: TextStyle(fontSize: 18),),
         ListTile(
-          title: const Text('Masculino'),
+          title: const Text('Masculino',),
           leading: Radio(
             value: SingingCharacter.masculino,
             groupValue: _character,
