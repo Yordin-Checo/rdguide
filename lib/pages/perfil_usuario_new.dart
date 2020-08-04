@@ -6,11 +6,11 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class Guia1Page extends StatelessWidget {
+class Guia3Page extends StatelessWidget {
   // static final String path = "lib/src/pages/profile/profile3.dart";
 
   final image =
-      'https://s.yimg.com/it/api/res/1.2/yWeM3re8XnoBfOJiMg3LDw--~A/YXBwaWQ9eW5ld3M7dz0zMDA7aD0yMDA7cT0xMDA-/https://s.yimg.com/xe/i/us/sp/v/nba_cutout/players_l/10112019/3704.png';
+      'https://www.mundodeportivo.com/r/GODO/MD/p7/Futbol/Imagenes/2020/04/06/Recortada/img_agomezo_20200326-110529_imagenes_md_otras_fuentes_gettyimages-1205035438-kT0F-U48336284567QyD-980x554@MundoDeportivo-Web.jpg';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,7 +46,7 @@ class Guia1Page extends StatelessWidget {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: <Widget>[
                                   Text(
-                                    "Argeny Estévez",
+                                    "Ricardo Rosario",
                                     style: Theme.of(context).textTheme.title,
                                   ),
                                   // ListTile(
@@ -136,7 +136,7 @@ class Guia1Page extends StatelessWidget {
                             style: TextStyle(
                                 fontSize: 16, fontWeight: FontWeight.bold),
                           ),
-                          subtitle: Text("Argeny025@gmail.com",
+                          subtitle: Text("RicardoRosario@gmail.com",
                               style: TextStyle(
                                 color: Colors.black87,
                                 fontSize: 16,
@@ -210,112 +210,6 @@ class Guia1Page extends StatelessWidget {
                               )),
                           leading: Icon(Icons.language),
                         ),
-                        GestureDetector(
-                          onTap: () {},
-                          child: Container(
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: <Widget>[
-                                Icon(
-                                  FontAwesomeIcons.facebook,
-                                  size: 40,
-                                  color: Colors.blue[800],
-                                ),
-                                Icon(
-                                  FontAwesomeIcons.twitter,
-                                  size: 40,
-                                  color: Colors.blue,
-                                ),
-                                Icon(
-                                  FontAwesomeIcons.instagram,
-                                  size: 40,
-                                  color: Colors.orange,
-                                )
-                              ],
-                            ),
-                          ),
-                        ),
-                        SizedBox(height: 10.0),
-                      ],
-                    ),
-                  ),
-                  SizedBox(height: 10.0),
-                  Container(
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(5.0),
-                    ),
-                    child: Column(
-                      children: <Widget>[
-                        ListTile(
-                          title: Text(
-                            "Comentarios",
-                            style: TextStyle(
-                                fontSize: 20, fontWeight: FontWeight.bold),
-                            textAlign: TextAlign.left,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  SizedBox(height: 5.0),
-                  Container(
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(5.0),
-                    ),
-                    child: Column(
-                      children: <Widget>[
-                        ListTile(
-                          title: Text(
-                            "Maria Gonzales: Excelente servicio me encanto la forma en como das las informaciones, el turs y lo dinamico que eres, sigue así Argeny Estévez.",
-                            style: TextStyle(
-                              fontSize: 16,
-                              color: Colors.black87,
-                            ),
-                            textAlign: TextAlign.justify,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  SizedBox(height: 5.0),
-                  Container(
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(5.0),
-                    ),
-                    child: Column(
-                      children: <Widget>[
-                        ListTile(
-                          title: Text(
-                            "Marthar Rodriguez: Excelente servicio me encanto la forma en como das las informaciones, el turs y lo dinamico que eres, sigue así Argeny Estévez",
-                            style:
-                                TextStyle(fontSize: 16, color: Colors.black87),
-                            textAlign: TextAlign.justify,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  SizedBox(height: 5.0),
-                  Container(
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(5.0),
-                    ),
-                    child: Column(
-                      children: <Widget>[
-                        ListTile(
-                          title: Text(
-                            "Juan Carlos: Excelente servicio me encanto la forma en como das las informaciones, el turs y lo dinamico que eres, sigue así Argeny Estévez.",
-                            style: TextStyle(
-                              fontSize: 16,
-                              color: Colors.black87,
-                            ),
-                            textAlign: TextAlign.justify,
-                          ),
-                        ),
                       ],
                     ),
                   ),
@@ -328,14 +222,6 @@ class Guia1Page extends StatelessWidget {
             )
           ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton.extended(
-        onPressed: () {
-          // Add your onPressed code here!
-        },
-        label: Text('WhatsApp'),
-        icon: Icon(Icons.chat),
-        backgroundColor: Colors.green,
       ),
     );
   }
