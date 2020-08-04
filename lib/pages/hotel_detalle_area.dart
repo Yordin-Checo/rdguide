@@ -80,7 +80,7 @@ class _HotelDetalleAreaState extends State<HotelDetalleArea> {
                               horizontal: 32.0,
                             ),
                             onPressed: () {
-                              Navigator.of(context).pushNamed('realizarreserva');},
+                              Navigator.of(context).pushNamed('/realizarreserva');},
                           ),
                       ),
                       const SizedBox(height: 30.0),

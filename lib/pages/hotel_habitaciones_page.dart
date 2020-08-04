@@ -75,7 +75,7 @@ class _HotelAreasPageState extends State<HotelAreasPage> {
                     children: <Widget>[
                       GestureDetector(
                       onTap: (){
-                        Navigator.of(context).pushNamed("detallearea",arguments: area);
+                        Navigator.of(context).pushNamed("/detallearea",arguments: area);
                       } , 
                       child: Image.network(area.img)),
                       Positioned(
