@@ -171,7 +171,7 @@ class _DetallePageState extends State<DetallePage> {
     return GestureDetector(
       onTap: () {
         if(categoria.id == 7){
-          Navigator.of(context).pushNamed('/guias');
+          Navigator.of(context).pushNamed('/opcionguias');
         }
        else Navigator.of(context).pushNamed('/resultado', arguments: categoria);
       },
