@@ -1,12 +1,8 @@
 
 import 'package:rdguide/bloc/bloc_provider.dart';
 import 'package:rdguide/bloc/login_bloc.dart';
-import 'package:rdguide/models/usuario.dart';
 import 'package:rdguide/services/authenticator.dart';
-import 'package:rdguide/services/shared_preferences.dart';
 import 'package:flutter/material.dart';
-import 'package:rdguide/pages/password_recovery_page.dart';
-
 import 'recuperar_pass.dart';
 
 

@@ -90,13 +90,17 @@ void irDestino(dynamic destino){
     Navigator.pushNamed(context, '/portadaDestino',arguments: destino);
 }
 
+void irEvento(dynamic destino){
+    Navigator.pushNamed(context, 'evento',arguments: destino);
+}
+
   Widget _swiperEventos(String titulo ,DestinosPopularesBloc bloc){
     return  StreamBuilder(
         stream: bloc.eventosPrincipalesStream,
         builder: (context, AsyncSnapshot<List<Evento>> snapshot){
           final result = snapshot.data;
           if(snapshot.hasData){
-            return SwiperWidget(titulo: titulo,elementos: result,onTap: irDestino,);
+            return SwiperWidget(titulo: titulo,elementos: result,onTap: irEvento,);
           }else{
             return Container(
               child: CircularProgressIndicator(),

@@ -20,18 +20,22 @@ class _RealizarReservaPageState extends State<RealizarReservaPage> {
       appBar: AppBar(
         title: Text('Realizar Reserva'),
       ),
-      body: ListView(
-        padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 20.0,),
-        children: <Widget>[
-          //aqui se crean los metodos
-          _nombreInput(),
-          SizedBox(height:20.0),
-          _telefonoInput(),
-          SizedBox(height:20.0),
-          _creaFecha(context),
-          SizedBox(height:20.0),
-          _textogrande()
-        ],
+      body: Center(
+        child: ListView(
+          padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 20.0,),
+          children: <Widget>[
+            //aqui se crean los metodos
+            _nombreInput(),
+            SizedBox(height:20.0),
+            _telefonoInput(),
+            SizedBox(height:20.0),
+            _creaFecha(context),
+            SizedBox(height:20.0),
+            _textogrande(),
+            SizedBox(height:20.0),
+            _pagar(),
+          ],
+        ),
       ),
       );
   }
@@ -135,6 +139,24 @@ class _RealizarReservaPageState extends State<RealizarReservaPage> {
       ),
       maxLines: 3,
     );
+  }
+
+  Widget _pagar(){
+    return RaisedButton(
+                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
+                            color: Colors.green,
+                            textColor: Colors.white,
+                            child: Text("Pagar ahora", style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 18
+                            ),),
+                            padding: const EdgeInsets.symmetric(
+                              vertical: 16.0,
+                              horizontal: 32.0,
+                            ),
+                            onPressed: () {
+                              Navigator.of(context).pushNamed('');},
+                          );
   }
   
 }

@@ -19,7 +19,7 @@ class _HotelAreasPageState extends State<HotelAreasPage> {
     @override
     Widget build(BuildContext context) {
       final Lugar lugar = ModalRoute.of(context).settings.arguments;
-      bloc.getsAreas("3");
+      bloc.getsAreas(lugar.id);
       return Scaffold(
         appBar: AppBar(
           centerTitle: true,
@@ -73,7 +73,11 @@ class _HotelAreasPageState extends State<HotelAreasPage> {
                 children: <Widget>[
                   Stack(
                     children: <Widget>[
-                      Image.network(area.img),
+                      GestureDetector(
+                      onTap: (){
+                        Navigator.of(context).pushNamed("detallearea");
+                      } , 
+                      child: Image.network(area.img)),
                       Positioned(
                         bottom: 20.0,
                         right: 10.0,
