@@ -154,7 +154,7 @@ class _DetallePageState extends State<DetallePage> {
                 _accion(lista.firstWhere((e) => e.id == 1)),
                 _accion(lista.firstWhere((e) => e.id == 2)),
                 _accion(lista.firstWhere((e) => e.id == 5)),
-                _accion(lista.firstWhere((e) => e.id == 2)),
+                _accion(lista.firstWhere((e) => e.id == 7)),
               ],
             );
           } else {
@@ -170,7 +170,10 @@ class _DetallePageState extends State<DetallePage> {
     categoria.lugar = idLugar;
     return GestureDetector(
       onTap: () {
-        Navigator.of(context).pushNamed('/resultado', arguments: categoria);
+        if(categoria.id == 7){
+          Navigator.of(context).pushNamed('/guias');
+        }
+       else Navigator.of(context).pushNamed('/resultado', arguments: categoria);
       },
       child: Column(
         children: <Widget>[

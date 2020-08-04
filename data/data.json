@@ -29,6 +29,11 @@
             "id": 6,
             "nombre": "Resort",
             "img": ""
+        },
+        {
+            "id": 7,
+            "nombre": "Guias",
+            "img": "assets/guia.png"
         }
     ]
 }

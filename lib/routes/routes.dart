@@ -51,9 +51,10 @@ Map<String, WidgetBuilder> getAplicationRoutes() {
     '/detalleLugar': (BuildContext context) => DetalleLugar(),
     '/hotel': (BuildContext context) => HotelPage(),
     '/hotel/areas': (BuildContext context) => HotelAreasPage(),
-    'evento': (BuildContext context) => EventoPage(),
-    'detallearea': (BuildContext context) => HotelDetalleArea(),
-    'realizarreserva': (BuildContext context) => RealizarReservaPage(),
-    'MapaG': (BuildContext context) => MapaG(),
+    '/evento': (BuildContext context) => EventoPage(),
+    '/detallearea': (BuildContext context) => HotelDetalleArea(),
+    '/realizarreserva': (BuildContext context) => RealizarReservaPage(),
+    '/MapaG': (BuildContext context) => MapaG(),
+    '/guias': (BuildContext context) => PerfilnuevaPage()
   };
 }

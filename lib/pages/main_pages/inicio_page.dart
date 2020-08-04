@@ -19,9 +19,7 @@ class InicioPageState extends State<InicioPage>{
   final bloc = DestinosPopularesBloc();
   @override
   Widget build(BuildContext context) {
-    bloc.getPopulares();
-    bloc.getPublicidad();
-    bloc.getEventosPrincipales();
+   getDatos(bloc);
     return BlocProvider(
       bloc: bloc,
       child: SingleChildScrollView(
@@ -56,6 +54,12 @@ class InicioPageState extends State<InicioPage>{
     );
   }
 
+
+  void getDatos(DestinosPopularesBloc bloc){
+    bloc.getPopulares();
+    bloc.getPublicidad();
+    bloc.getEventosPrincipales();
+  }
   Widget _portadaPublicidad(DestinosPopularesBloc bloc){
     return StreamBuilder(
       stream: bloc.publicidadStream,
@@ -91,7 +95,7 @@ void irDestino(dynamic destino){
 }
 
 void irEvento(dynamic destino){
-    Navigator.pushNamed(context, 'evento',arguments: destino);
+    Navigator.pushNamed(context, '/evento',arguments: destino);
 }
 
   Widget _swiperEventos(String titulo ,DestinosPopularesBloc bloc){
