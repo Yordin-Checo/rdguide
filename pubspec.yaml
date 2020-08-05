@@ -38,7 +38,7 @@ dependencies:
   google_maps_flutter: ^0.5.28+1
   rxdart: ^0.24.1
   geolocator: ^5.3.2+2
-  
+  url_launcher: ^5.5.0
 
   # #esta es la dependencia para el campo fecha
   # flutter_localizations:

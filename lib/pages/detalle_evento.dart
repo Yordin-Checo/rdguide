@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:rdguide/bloc/eventos_bloc.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 
 
@@ -114,7 +115,7 @@ String idLugar="";
                               horizontal: 60.0,
                             ),
                             onPressed: () {
-                              null;/*Navigator.of(context).pushNamed();*/},
+                              _lansarWhatsapp();},
                           ),
                 )
               ],
@@ -148,9 +149,23 @@ void irDestino(dynamic destino){
 
 
 
+_lansarWhatsapp() async {
+  const url = 'https://wa.me/18298662767';
+  if (await canLaunch(url)) {
+    await launch(url);
+  } else {
+    throw 'No se pudo iniciar $url';
+  }
+}
 
-
-
+_lansarllamada() async {
+    const url = "tel:18298662767";   
+    if (await canLaunch(url)) {
+       await launch(url);
+    } else {
+      throw 'No se pudo iniciar $url';
+    }   
+}
 
 
 
