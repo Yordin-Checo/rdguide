@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:rdguide/bloc/bloc_provider.dart';
 import 'package:rdguide/bloc/destinos_populares_bloc.dart';
+import 'package:rdguide/buscador/buscador.dart';
 import 'package:rdguide/models/destino.dart';
 import 'package:rdguide/models/eventos.dart';
 import 'package:rdguide/models/publicidad.dart';
@@ -25,7 +26,8 @@ class InicioPageState extends State<InicioPage>{
       child: SingleChildScrollView(
         child: Column(
         children: <Widget>[
-          _search(),
+         // _search(),
+          header(),
           _portadaPublicidad(bloc),
           SizedBox(height: 10.0,),
          _swiperPopulares("Destinos Populares",bloc),
@@ -54,6 +56,28 @@ class InicioPageState extends State<InicioPage>{
     );
   }
 
+  Widget header(){
+    return Padding(
+      padding: const EdgeInsets.all(12.0),
+      child: Row(
+        mainAxisSize: MainAxisSize.max,
+        children: <Widget>[
+          Text("RD Guide", style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold,color: Colors.green),),
+          Spacer(),
+          GestureDetector(
+            onTap: (){
+              showSearch(context: context, delegate: BuscarCiudad());
+            },
+            child: CircleAvatar(
+              backgroundColor: Colors.grey.withOpacity(0.5),
+              child: Icon(Icons.search,color: Colors.black87,),
+            ),
+          ),
+
+        ],
+      ),
+    );
+  }
 
   void getDatos(DestinosPopularesBloc bloc){
     bloc.getPopulares();
@@ -127,6 +151,7 @@ void irEvento(dynamic destino){
                     color: Color(0xffE1E2E4),
                     borderRadius: BorderRadius.all(Radius.circular(10))),
                 child: TextField(
+
                   decoration: InputDecoration(
                       border: InputBorder.none,
                       hintText: "Buscar destinos",
@@ -134,6 +159,9 @@ void irEvento(dynamic destino){
                       contentPadding:
                       EdgeInsets.only(left: 10, right: 10, bottom: 0, top: 5),
                       prefixIcon: Icon(Icons.search, color: Colors.black54)),
+                  onChanged: (text){
+                    showSearch(context: context, delegate: BuscarCiudad(),query: text);
+                  },
                 ),
               ),
             ),

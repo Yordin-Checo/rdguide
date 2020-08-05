@@ -4,6 +4,7 @@ import 'dart:convert';
 
 import 'package:rdguide/models/destino.dart';
 import 'package:http/http.dart' as http;
+import 'package:rdguide/pages/main_pages/favoritos_page.dart';
 import 'package:rdguide/providers/utils_provider.dart';
 import 'package:rdguide/services/shared_preferences.dart';
 
@@ -32,28 +33,43 @@ class _DestinosProvider{
 //      _popularesStreamController.close();
 //    }
 
+  Future<List<Destino>> buscarCiudad(String query) async {
+    List<Destino> _destinosPopulares = new List();
 
+    final url = Uri.http(_url, "/GetCiudad/${query}");
+    final token = await sharedPreferences.getToken();
+    print(token);
+    final Map<String, String> header = {"Token": token};
 
- Future<List<Destino>> cargarDatos() async{
+    final resp = await http.get(url, headers: header);
 
+    if (resp.statusCode == 200) {
+      final decodeData = json.decode(resp.body);
+      final destinosData = decodeData['item2'];
+      final destinos = Destinos.fromJsonList(destinosData);
+      _destinosPopulares = destinos.items;
+    }
+    return _destinosPopulares;
+  }
 
-      List<Destino> _destinosPopulares = new List();
+ Future<List<Destino>> cargarDatos() async {
+   List<Destino> _destinosPopulares = new List();
 
-      final url = Uri.http(_url, "/GetDestinosPopulares");
-      final token = await sharedPreferences.getToken();
-      final Map<String,String> header = {"Token":token};
+   final url = Uri.http(_url, "/GetDestinosPopulares");
+   final token = await sharedPreferences.getToken();
+   print(token);
+   final Map<String, String> header = {"Token": token};
 
-      final resp = await http.get(url,headers: header);
+   final resp = await http.get(url, headers: header);
 
-      if(resp.statusCode == 200){
-        final decodeData = json.decode(resp.body);
-        final destinosData =  decodeData['item2'];
-        final destinos = Destinos.fromJsonList(destinosData);
-        _destinosPopulares = destinos.items;
-
-      }
-      return _destinosPopulares;
-
+   if (resp.statusCode == 200) {
+     final decodeData = json.decode(resp.body);
+     final destinosData = decodeData['item2'];
+     final destinos = Destinos.fromJsonList(destinosData);
+     _destinosPopulares = destinos.items;
+   }
+   return _destinosPopulares;
+ }
 //   _collectionPopulares.snapshots().listen((data) {
 //     data.documents.forEach((element) {
 //       _destinosPopulares.add(Destino.fromJsonMap(element.data));
@@ -78,7 +94,6 @@ class _DestinosProvider{
 //    _destinosPopulares.addAll(destinos.items);
     //y como ese metodo lo que hace es destructurarlos y asignarlo a items, retornamos items
 
-  }
 
 
   
