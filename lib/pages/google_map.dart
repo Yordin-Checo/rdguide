@@ -59,7 +59,7 @@ class MapaGState extends State<MapaG> {
       width: MediaQuery.of(context).size.width,
       child: GoogleMap(
         mapType: MapType.normal,
-        initialCameraPosition:  CameraPosition(target: LatLng(19.140372, -70.6321897), zoom: 17),
+        initialCameraPosition:  CameraPosition(target: LatLng(19.0932388, -70.6181941), zoom: 17),
         onMapCreated: (GoogleMapController controller) {
           _controller.complete(controller);
         },

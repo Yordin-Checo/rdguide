@@ -21,10 +21,18 @@ class _DetalleLugarState extends State<DetalleLugar> {
     bloc.getsLugares(idelemento);
     return Scaffold(
       appBar: AppBar(
+        
         backgroundColor: Color(0xFF1510269),
         centerTitle: true,
         title: Text(lugar.nombre),
 
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.pushNamed(context, 'MapaG');
+        },
+        backgroundColor: Colors.green,
+        child: Icon(Icons.location_on),
       ),
 
       body:ListView(

@@ -29,6 +29,13 @@ String idLugar="";
     bloc.getEventosPrincipales(idelemento);
    
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.pushNamed(context, '/MapaG');
+        },
+        backgroundColor: Colors.green,
+        child: Icon(Icons.location_on),
+      ),
 
       body:Stack(
         children: <Widget>[
