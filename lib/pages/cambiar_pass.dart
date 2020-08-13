@@ -125,7 +125,7 @@ class _CambioPassPageState extends State<CambioPassPage> {
         borderRadius: BorderRadius.circular(15.0)
       ),
       elevation: 0.0,
-      color: Colors.blue,
+      color: Colors.green,
       textColor: Colors.white,
       onPressed: (){
 

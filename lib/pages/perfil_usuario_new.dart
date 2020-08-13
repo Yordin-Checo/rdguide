@@ -1,13 +1,6 @@
-/**
- * Author: Damodar Lohani
- * profile: https://github.com/lohanidamodar
-  */
-
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class Guia3Page extends StatelessWidget {
-  // static final String path = "lib/src/pages/profile/profile3.dart";
+class PerfilNewPage extends StatelessWidget {
 
   final image =
       'https://www.mundodeportivo.com/r/GODO/MD/p7/Futbol/Imagenes/2020/04/06/Recortada/img_agomezo_20200326-110529_imagenes_md_otras_fuentes_gettyimages-1205035438-kT0F-U48336284567QyD-980x554@MundoDeportivo-Web.jpg';
@@ -62,41 +55,6 @@ class Guia3Page extends StatelessWidget {
                               padding: const EdgeInsets.all(8.0),
                               child: Row(
                                 children: <Widget>[
-                                  // Row(
-                                  //   mainAxisAlignment: MainAxisAlignment.center,
-                                  //   children: <Widget>[
-                                  //     Icon(Icons.star, color: Colors.yellow),
-                                  //     Icon(Icons.star, color: Colors.yellow),
-                                  //     Icon(Icons.star, color: Colors.yellow),
-                                  //     Icon(Icons.star, color: Colors.yellow),
-                                  //     Icon(Icons.star_half,
-                                  //         color: Colors.yellow)
-                                  //   ],
-                                  // ),
-                                  // Expanded(
-                                  //   child: Column(
-                                  //     children: <Widget>[
-                                  //       Text("285"),
-                                  //       Text("Likes")
-                                  //     ],
-                                  //   ),
-                                  // ),
-                                  // Expanded(
-                                  //   child: Column(
-                                  //     children: <Widget>[
-                                  //       Text("3025"),
-                                  //       Text("Comments")
-                                  //     ],
-                                  //   ),
-                                  // ),
-                                  // Expanded(
-                                  //   child: Column(
-                                  //     children: <Widget>[
-                                  //       Text("650"),
-                                  //       Text("Favourites")
-                                  //     ],
-                                  //   ),
-                                  // ),
                                 ],
                               ),
                             ),
@@ -132,16 +90,52 @@ class Guia3Page extends StatelessWidget {
                         Divider(),
                         ListTile(
                           title: Text(
-                            "Email",
+                            "Nombre",
                             style: TextStyle(
                                 fontSize: 16, fontWeight: FontWeight.bold),
                           ),
-                          subtitle: Text("RicardoRosario@gmail.com",
+                          subtitle: Text("Ricardo Rosario",
                               style: TextStyle(
                                 color: Colors.black87,
                                 fontSize: 16,
                               )),
-                          leading: Icon(Icons.email),
+                        ),
+                        ListTile(
+                          title: Text(
+                            "Sexo",
+                            style: TextStyle(
+                                fontSize: 16, fontWeight: FontWeight.bold),
+                          ),
+                          subtitle: Text("Masculino",
+                              style: TextStyle(
+                                color: Colors.black87,
+                                fontSize: 16,
+                              )),
+                        ),
+                        ListTile(
+                          title: Text(
+                            "Fecha de Nacimiento",
+                            style: TextStyle(
+                                fontSize: 16, fontWeight: FontWeight.bold),
+                          ),
+                          subtitle: Text("25/09/1992",
+                              style: TextStyle(
+                                color: Colors.black87,
+                                fontSize: 16,
+                              )),
+                        ),
+                        ListTile(
+                          title: Text(
+                            "Edad",
+                            style: TextStyle(
+                                fontSize: 16, fontWeight: FontWeight.bold),
+                          ),
+                          subtitle: Text("27",
+                              textAlign: TextAlign.justify,
+                              style: TextStyle(
+                                color: Colors.black87,
+                                fontSize: 16,
+                              )),
                         ),
                         ListTile(
                           title: Text(
@@ -154,62 +148,39 @@ class Guia3Page extends StatelessWidget {
                                 color: Colors.black87,
                                 fontSize: 16,
                               )),
-                          leading: Icon(Icons.phone),
                         ),
                         ListTile(
                           title: Text(
-                            "Sitio Web",
+                            "Email",
                             style: TextStyle(
                                 fontSize: 16, fontWeight: FontWeight.bold),
                           ),
-                          subtitle: Text("https://www.RDGuide.com",
+                          subtitle: Text("RicardoRosario@gmail.com",
                               style: TextStyle(
                                 color: Colors.black87,
                                 fontSize: 16,
                               )),
-                          leading: Icon(Icons.web),
                         ),
-                        ListTile(
-                          title: Text(
-                            "Actividades",
-                            style: TextStyle(
-                                fontSize: 16, fontWeight: FontWeight.bold),
-                          ),
-                          subtitle: Text(
-                              "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla, illo repellendus quas beatae reprehenderit nemo, debitis explicabo officiis sit aut obcaecati iusto porro? Exercitationem illum consequuntur magnam eveniet delectus ab.",
-                              textAlign: TextAlign.justify,
+                        RaisedButton(
+                          child: Container(
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 50.0, vertical: 15.0),
+                            child: Text(
+                              'Actualizar Datos',
                               style: TextStyle(
-                                color: Colors.black87,
-                                fontSize: 16,
-                              )),
-                          leading: Icon(Icons.description),
-                        ),
-                        ListTile(
-                          title: Text(
-                            "Ubicación",
-                            style: TextStyle(
-                                fontSize: 16, fontWeight: FontWeight.bold),
+                                  fontSize: 18.0, fontWeight: FontWeight.bold),
+                            ),
                           ),
-                          subtitle: Text("Jarabacoa",
-                              style: TextStyle(
-                                color: Colors.black87,
-                                fontSize: 16,
-                              )),
-                          leading: Icon(Icons.location_on),
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15.0)),
+                          elevation: 0.0,
+                          color: Colors.green,
+                          textColor: Colors.white,
+                          onPressed: () {
+                            Navigator.pushNamed(context, '/actualizarDatos');
+                          },
                         ),
-                        ListTile(
-                          title: Text(
-                            "Idiomas",
-                            style: TextStyle(
-                                fontSize: 16, fontWeight: FontWeight.bold),
-                          ),
-                          subtitle: Text("Español, Ingles, Francés",
-                              style: TextStyle(
-                                color: Colors.black87,
-                                fontSize: 16,
-                              )),
-                          leading: Icon(Icons.language),
-                        ),
+                        SizedBox(height: 10),
                       ],
                     ),
                   ),
@@ -226,3 +197,5 @@ class Guia3Page extends StatelessWidget {
     );
   }
 }
+
+

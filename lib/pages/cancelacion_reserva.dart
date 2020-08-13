@@ -15,11 +15,11 @@ class _CancelacionPage extends State<CancelacionPage> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: Colors.white,
-        title: Text('Cancelación reserva', style: TextStyle(color: Colors.black),textAlign: TextAlign.center,),
+        backgroundColor: Colors.green,
+        title: Text('Cancelación reserva', style: TextStyle(color: Colors.white),textAlign: TextAlign.left,),
         elevation: 0,
         leading: IconButton(
-          icon: Icon(Icons.arrow_back,color: Colors.black,),
+          icon: Icon(Icons.arrow_back,color: Colors.white,),
           onPressed: (){
             Navigator.pop(context);
           },

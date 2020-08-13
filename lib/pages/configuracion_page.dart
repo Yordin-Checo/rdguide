@@ -11,7 +11,7 @@ class _ConfiPage extends State<ConfiPage> {
   
 
   bool modoOscuro = true;
-  final url = 'https://www.pasionfutbol.com/__export/1539874820414/sites/pasionlibertadores/img/2018/10/18/leo_messi.jpg_423682103.jpg';
+  final url = 'https://www.mundodeportivo.com/r/GODO/MD/p7/Futbol/Imagenes/2020/04/06/Recortada/img_agomezo_20200326-110529_imagenes_md_otras_fuentes_gettyimages-1205035438-kT0F-U48336284567QyD-980x554@MundoDeportivo-Web.jpg';
 
   
 
@@ -78,7 +78,7 @@ class _ConfiPage extends State<ConfiPage> {
         textColor: Colors.black,
         splashColor: Colors.grey,
         onPressed: () {
-          Navigator.pushNamed(context, '/cuenta');
+          Navigator.pushNamed(context, '/cuentaNew');
         },
         //icon: Icon(Icons.vpn_key),
           child: Align(

@@ -15,11 +15,11 @@ class _PagarReserva extends State<PagarReserva> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: Colors.white,
-        title: Text('Pagar reservación', style: TextStyle(color: Colors.black),textAlign: TextAlign.center,),
+        backgroundColor: Colors.green,
+        title: Text('Pagar reservación', style: TextStyle(color: Colors.white),textAlign: TextAlign.left,),
         elevation: 0,
         leading: IconButton(
-          icon: Icon(Icons.arrow_back,color: Colors.black,),
+          icon: Icon(Icons.arrow_back,color: Colors.white,),
           onPressed: (){
             Navigator.pop(context);
           },

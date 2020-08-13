@@ -1,10 +1,9 @@
-/**
- * Author: Damodar Lohani
- * profile: https://github.com/lohanidamodar
-  */
+
 
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
+import 'package:url_launcher/url_launcher.dart';
 
 class Guia2Page extends StatelessWidget {
   // static final String path = "lib/src/pages/profile/profile3.dart";
@@ -175,8 +174,24 @@ class Guia2Page extends StatelessWidget {
                             style: TextStyle(
                                 fontSize: 16, fontWeight: FontWeight.bold),
                           ),
-                          subtitle: Text(
-                              "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla, illo repellendus quas beatae reprehenderit nemo, debitis explicabo officiis sit aut obcaecati iusto porro? Exercitationem illum consequuntur magnam eveniet delectus ab.",
+                          subtitle: Text('''
+Recepción de los visitantes nacionales y extranjeros. 
+
+Acompañamiento de turistas. 
+
+Manejo de presupuesto de gastos de tour.  
+
+Supervisión de la unidad de transporte.
+
+Elaboración de informes o reportes de tour.
+
+Información veraz, objetiva y clara al público receptor.
+
+Coordinación de los servicios y productos dentro del itinerario del tour.
+
+Asistencia al turista, primeros auxilios y, en caso necesario, coordinación de ingreso del turista a servicios hospitalarios.
+                               
+Ejecución puntual del programa de actividades establecido por la agencia de viajes o tour operador.''',
                               textAlign: TextAlign.justify,
                               style: TextStyle(
                                 color: Colors.black87,
@@ -331,6 +346,7 @@ class Guia2Page extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () {
+          _lansarWhatsapp();
           // Add your onPressed code here!
         },
         label: Text('WhatsApp'),
@@ -338,5 +354,13 @@ class Guia2Page extends StatelessWidget {
         backgroundColor: Colors.green,
       ),
     );
+  }
+   _lansarWhatsapp() async {
+    const url = 'https://wa.me/18298662767';
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'No se pudo iniciar $url';
+    }
   }
 }
