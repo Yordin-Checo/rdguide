@@ -41,7 +41,6 @@ class Usuario {
     "fechanac": fechanac,
     "email": email,
     "clave": clave,
-    "token": token,
   };
 
   @override

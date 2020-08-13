@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'dart:core';
+import 'package:flutter/cupertino.dart';
 import 'package:rdguide/models/usuario.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -50,9 +51,10 @@ class _SharedPreferences {
     }
   }
 
-  void logout() async{
+  void logout(BuildContext context) async{
     final SharedPreferences prefs = await _prefs;
     prefs.clear();
+    Navigator.pushNamed(context, '/login');
   }
 
 }

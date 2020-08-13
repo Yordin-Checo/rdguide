@@ -27,12 +27,19 @@ class _loginProvider {
     final resp = await http.get(url);
 
     if(resp.statusCode == 200){
-      final dataJson = resp.body;
 
+
+      final dataJson = resp.body;
       final dataMap = json.decode(dataJson);
+
+      if(dataMap['item1']=='false'){
+        return Future.error({"mensaje":"Usuario o contraseña invalido"});}
+
       print(dataMap['item1']);
       usuario = Usuario.fromJson(dataMap['item2'][0]);
-      print(usuario);
+
+
+
     }
     return usuario;
 

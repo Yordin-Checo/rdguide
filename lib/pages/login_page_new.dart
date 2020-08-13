@@ -61,6 +61,7 @@ class _LoginPageState extends State<LoginPage> {
                     Column(
                       children: <Widget>[
                         TextField(
+                          keyboardType: TextInputType.emailAddress,
                           controller: _emailController,
                           decoration: InputDecoration(
                             prefixIcon: Icon(Icons.person,color: Colors.grey,),
@@ -78,7 +79,7 @@ class _LoginPageState extends State<LoginPage> {
 
                                 borderRadius: BorderRadius.circular(10),
                                 borderSide: BorderSide(
-                                  color: Colors.red,
+                                  color: Colors.blueAccent,
 
                                 )
                             ),
@@ -102,7 +103,7 @@ class _LoginPageState extends State<LoginPage> {
                             focusedBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(10),
                                 borderSide: BorderSide(
-                                  color: Colors.red,
+                                  color: Colors.blueAccent,
                                 )
                             ),
                           ),
@@ -231,6 +232,7 @@ class _LoginPageState extends State<LoginPage> {
             ),
           ),
             loading(bloc),
+          error(bloc)
         ],
       ),
     );
@@ -238,12 +240,12 @@ class _LoginPageState extends State<LoginPage> {
 
   void Login(){
     String correo,clave;
-    correo = _emailController.text;
+    correo = _emailController.text.trim();
     clave = _claveController.text;
 
     if(correo.isNotEmpty && clave.isNotEmpty){
       bloc.enviar();
-      bloc.login(correo: correo, clave: clave);
+      bloc.login(correo: correo, clave: clave,context: context);
     }
 
   }
@@ -256,6 +258,35 @@ class _LoginPageState extends State<LoginPage> {
           child: (snapshot.hasData && snapshot.data)? CircularProgressIndicator():null,
         );
       }
+    );
+  }
+  Widget error(LoginBloc bloc ) {
+    return StreamBuilder(
+        stream: bloc.errorStream,
+        builder: (context, AsyncSnapshot<String> snapshot) {
+          return Center(
+            child: (snapshot.hasData && snapshot.data.isNotEmpty)? AlertDialog(
+
+              title: Row(
+                children: <Widget>[
+                  Icon(Icons.error,color: Colors.red,),
+                  Text("Atencion!!"),
+                ],
+              ),
+              content: Text(snapshot.data),
+              actions: <Widget>[
+                FlatButton(
+                  child: Text('Aceptar'),
+                  onPressed: () {},
+                ),
+              ],
+            )
+
+
+
+                :null,
+          );
+        }
     );
   }
 }

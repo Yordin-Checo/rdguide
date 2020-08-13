@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rdguide/services/shared_preferences.dart';
 
 class ConfiPage extends StatefulWidget {
   @override
@@ -210,7 +211,9 @@ class _ConfiPage extends State<ConfiPage> {
       child: FlatButton(
         textColor: Colors.black,
         splashColor: Colors.grey,
-        onPressed: () {},
+        onPressed: () {
+            sharedPreferences.logout(context);
+        },
         //icon: Icon(Icons.vpn_key),
           child: Align(alignment: Alignment.topLeft,
           child: Text("Cerrar Sesión", style: TextStyle(fontSize: 18.0),)),
