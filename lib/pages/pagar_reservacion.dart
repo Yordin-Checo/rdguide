@@ -13,7 +13,7 @@ class _PagarReserva extends State<PagarReserva> {
         centerTitle: true,
         backgroundColor: Colors.green,
         title: Text(
-          'Pagar reservación',
+          'Pagar una reservación',
           style: TextStyle(color: Colors.white),
           textAlign: TextAlign.left,
         ),
@@ -32,47 +32,109 @@ class _PagarReserva extends State<PagarReserva> {
         padding: const EdgeInsets.all(20.0),
         child: Container(
           child: SingleChildScrollView(
-            child: Text(
-              '''INFORMACIÓN RELEVANTE
+            child: Column(
+              children: [
+                ListTile(
+                  title: Text(
+                    "Para realizar una reservación en RD Guide, Puedes enviarle una solicitud de reservación al anfitrión. Si no estás seguro acerca del alojamiento o de su disponibilidad, también puedes enviar un mensaje al anfitrión.",
+                    textAlign: TextAlign.justify,
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: Colors.black87,
+                    ),
+                  ),
+//                   subtitle: Text('''
 
-Es requisito necesario para la adquisición de los productos que se ofrecen en este sitio, que lea y acepte los siguientes Términos y Condiciones que a continuación se redactan. El uso de nuestros servicios así como la compra de nuestros productos implicará que usted ha leído y aceptado los Términos y Condiciones de Uso en el presente documento. Todas los productos  que son ofrecidos por nuestro sitio web pudieran ser creadas, cobradas, enviadas o presentadas por una página web tercera y en tal caso estarían sujetas a sus propios Términos y Condiciones. En algunos casos, para adquirir un producto, será necesario el registro por parte del usuario, con ingreso de datos personales fidedignos y definición de una contraseña.
-El usuario puede elegir y cambiar la clave para su acceso de administración de la cuenta en cualquier momento, en caso de que se haya registrado y que sea necesario para la compra de alguno de nuestros productos.  no asume la responsabilidad en caso de que entregue dicha clave a terceros.
-Todas las compras y transacciones que se lleven a cabo por medio de este sitio web, están sujetas a un proceso de confirmación y verificación, el cual podría incluir la verificación del stock y disponibilidad de producto, validación de la forma de pago, validación de la factura (en caso de existir) y el cumplimiento de las condiciones requeridas por el medio de pago seleccionado. En algunos casos puede que se requiera una verificación por medio de correo electrónico.
-Los precios de los productos ofrecidos en esta Tienda Online es válido solamente en las compras realizadas en este sitio web.
+// Reservación de un hotel:
 
-LICENCIA 
+// 1.	En la app busca la ciudad y alojamiento que desea reservar.
 
-A través de su sitio web concede una licencia para que los usuarios utilicen  los productos que son vendidos en este sitio web de acuerdo a los Términos y Condiciones que se describen en este documento.
+// 2.	Haz clic en reservar, selecciona el área donde se quiere alojar en el hotel.
 
-USO NO AUTORIZADO
+// 3.	Comprueba la disponibilidad y llena el formulario.
 
-En caso de que aplique (para venta de software, templetes, u otro producto de diseño y programación) usted no puede colocar uno de nuestros productos, modificado o sin modificar, en un CD, sitio web o ningún otro medio y ofrecerlos para la redistribución o la reventa de ningún tipo.
+// 4.	Completa los datos de pago.
 
-PROPIEDAD
+// 5.	Acepta las condiciones, lo que incluye la Política de cancelación del anfitrión y las Reglas de la casa.
 
-Usted no puede declarar propiedad intelectual o exclusiva a ninguno de nuestros productos, modificado o sin modificar. Todos los productos son propiedad  de los proveedores del contenido. En caso de que no se especifique lo contrario, nuestros productos se proporcionan  sin ningún tipo de garantía, expresa o implícita. En ningún esta compañía será  responsables de ningún daño incluyendo, pero no limitado a, daños directos, indirectos, especiales, fortuitos o consecuentes u otras pérdidas resultantes del uso o de la imposibilidad de utilizar nuestros productos.
+// 6.	Espera la respuesta del anfitrión. Aunque dispone de hasta 24 horas para responder, la mayoría de los anfitriones suelen hacerlo mucho antes.
 
-POLÍTICA DE REEMBOLSO Y GARANTÍA
+// 7.	Te llegara un correo de confirmación y código de entrada.
 
-En el caso de productos que sean  mercancías irrevocables no-tangibles, no realizamos reembolsos después de que se envíe el producto, usted tiene la responsabilidad de entender antes de comprarlo.  Le pedimos que lea cuidadosamente antes de comprarlo. Hacemos solamente excepciones con esta regla cuando la descripción no se ajusta al producto. Hay algunos productos que pudieran tener garantía y posibilidad de reembolso pero este será especificado al comprar el producto. En tales casos la garantía solo cubrirá fallas de fábrica y sólo se hará efectiva cuando el producto se haya usado correctamente. La garantía no cubre averías o daños ocasionados por uso indebido. Los términos de la garantía están asociados a fallas de fabricación y funcionamiento en condiciones normales de los productos y sólo se harán efectivos estos términos si el equipo ha sido usado correctamente. 
+// Algunos anfitriones requieren que completes el proceso de Verificación de identidad antes de confirmar una reservación, lo que permite al anfitrión obtener más información acerca de quién está hospedando en su alojamiento.
 
-Esto incluye:
+// Si acepta tu solicitud, se te cobrará por completo la reservación. Si el anfitrión la rechaza o no responde en 24 horas, no se realizará ningún cargo y podrás reservar otro alojamiento para las mismas fechas.
+// ''',
+//                       textAlign: TextAlign.justify,
+//                       style: TextStyle(
+//                         color: Colors.black87,
+//                         fontSize: 16,
+//                       )),
+                ),
+                
+                ListTile(
+                  title: Text(
+                    "Reservación de un hotel:",
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  ),
+                  subtitle: Text('''
 
-– De acuerdo a las especificaciones técnicas indicadas para cada producto.
-– En condiciones ambientales acorde con las especificaciones indicadas por el fabricante.
-– En uso específico para la función con que fue diseñado de fábrica.
-– En condiciones de operación eléctricas acorde con las especificaciones y tolerancias indicadas.
+1.	En la app busca la ciudad y alojamiento que desea reservar.
 
-COMPROBACIÓN ANTIFRAUDE
+2.	Haz clic en reservar, selecciona el área donde se quiere alojar en el hotel.
 
-La compra del cliente puede ser aplazada para la comprobación antifraude. También puede ser suspendida por más tiempo para una investigación más rigurosa, para evitar transacciones fraudulentas.
+3.	Comprueba la disponibilidad y llena el formulario.
 
-PRIVACIDAD
+4.	Completa los datos de pago.
 
-Este  garantiza que la información personal que usted envía cuenta con la seguridad necesaria. Los datos ingresados por usuario o en el caso de requerir una validación de los pedidos no serán entregados a terceros, salvo que deba ser revelada en cumplimiento a una orden judicial o requerimientos legales. La suscripción a boletines de correos electrónicos publicitarios es voluntaria y podría ser seleccionada al momento de crear su cuenta. Reserva los derechos de cambiar o de modificar estos términos sin previo aviso.
+5.	Acepta las condiciones, lo que incluye la Política de cancelación del anfitrión y las Reglas de la casa.
+
+6.	Espera la respuesta del anfitrión. Aunque dispone de hasta 24 horas para responder, la mayoría de los anfitriones suelen hacerlo mucho antes.
+
+7.	Te llegara un correo de confirmación y código de entrada.
+
+Algunos anfitriones requieren que completes el proceso de Verificación de identidad antes de confirmar una reservación, lo que permite al anfitrión obtener más información acerca de quién está hospedando en su alojamiento.
+
+Si acepta tu solicitud, se te cobrará por completo la reservación. Si el anfitrión la rechaza o no responde en 24 horas, no se realizará ningún cargo y podrás reservar otro alojamiento para las mismas fechas.
 ''',
-              textAlign: TextAlign.justify,
-              style: TextStyle(fontSize: 16),
+                      textAlign: TextAlign.justify,
+                      style: TextStyle(
+                        color: Colors.black87,
+                        fontSize: 16,
+                      )),
+                ),
+                 ListTile(
+                  title: Text(
+                    "Reservación de un Restaurante:",
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  ),
+                  subtitle: Text('''
+
+1.	En la app busca la ciudad y retaurante que desea reservar.
+
+2.	Haz clic en reservar, selecciona el área del Restaurante desea hacer la reserva.
+
+3.	Comprueba la disponibilidad y llena el formulario.
+
+4.	Completa los datos de pago.
+
+5.	Acepta las condiciones, lo que incluye la Política de cancelación del anfitrión y las Reglas de la casa.
+
+6.	Espera la respuesta del anfitrión. Aunque dispone de hasta 2 horas para responder, la mayoría de los anfitriones suelen hacerlo mucho antes.
+
+7.	Te llegara un correo de confirmación y código de entrada.
+
+Algunos anfitriones requieren que completes el proceso de Verificación de identidad antes de confirmar una reservación, lo que permite al anfitrión obtener más información acerca de quién está realizando la rerserva.
+
+Si acepta tu solicitud, se te cobrará por completo la reservación. Si el anfitrión la rechaza o no responde en 2 horas, no se realizará ningún cargo y podrás reservar otro alojamiento para las mismas fechas.
+''',
+                      textAlign: TextAlign.justify,
+                      style: TextStyle(
+                        color: Colors.black87,
+                        fontSize: 16,
+                      )),
+                ),
+              ],
             ),
           ),
         ),

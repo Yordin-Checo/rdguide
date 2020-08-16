@@ -47,7 +47,7 @@ class _Ayuda extends State<Ayuda> {
        Card(
             child: ListTile(
               leading: Icon(Icons.cancel,color: Colors.red,),
-              title: Text('Cancelaciones reservas'),              
+              title: Text('Cancelar reservas'),              
               onTap: (){
                 Navigator.pushNamed(context, '/cancelacion');
               },                    

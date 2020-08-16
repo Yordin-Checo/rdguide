@@ -174,6 +174,7 @@ class Guia1Page extends StatelessWidget {
                           ),
                           subtitle: Text(
                              '''
+                             
 Recepción de los visitantes nacionales y extranjeros. 
 
 Acompañamiento de turistas. 
