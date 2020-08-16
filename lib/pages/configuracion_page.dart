@@ -198,7 +198,7 @@ class _ConfiPage extends State<ConfiPage> {
         //icon: Icon(Icons.vpn_key),
           child: Align(
             alignment: Alignment.topLeft,
-            child: Text("Acerca de", style: TextStyle(fontSize: 18.0),)),
+            child: Text("Acerca de RD Guide", style: TextStyle(fontSize: 18.0),)),
       ),
     );
   }

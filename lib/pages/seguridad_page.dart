@@ -40,11 +40,25 @@ class _SeguridadPage extends State<SeguridadPage> {
   }
 
   _cambiarPass(){
+
+
+
+
+    //  return Card(
+    //         child: ListTile(
+    //           // leading: Icon(Icons.lock,color: Colors.grey,),
+    //           title: Text('Cambiar Contraseña'),              
+    //           onTap: (){
+    //             Navigator.pushNamed(context, '/cambiarPass');
+    //           },                    
+    //         ), 
+    //       );
+          
     return Container(
       width: double.infinity,
       height: 50.0,
       child: FlatButton(
-        textColor: Colors.black,
+        textColor: Colors.black87,
         splashColor: Colors.grey,
         onPressed: () {
           Navigator.pushNamed(context, '/cambiarPass');

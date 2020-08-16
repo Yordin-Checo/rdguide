@@ -35,6 +35,16 @@ class _TarjetaOpcionPageState extends State<TarjetaOpcionPage> {
 
   Widget _misTargetas(){
 
+    // return Card(
+    //         child: ListTile(
+    //           // leading: Icon(Icons.lock,color: Colors.grey,),
+    //           title: Text("Mis Tarjetas", style: TextStyle(fontSize: 18.0),),              
+    //           onTap: (){
+    //             // Navigator.pushNamed(context, '/cambiarPass');
+    //           },                    
+    //         ), 
+    //       );
+
     return Container(
       width: double.infinity,
       height: 50.0,
@@ -52,6 +62,16 @@ class _TarjetaOpcionPageState extends State<TarjetaOpcionPage> {
   }
 
    Widget _registrarTargeta(){
+
+    //  return Card(
+    //         child: ListTile(
+    //           // leading: Icon(Icons.lock,color: Colors.grey,),
+    //           title: Text("Registrar Tarjetas", style: TextStyle(fontSize: 18.0),),              
+    //           onTap: (){
+    //             Navigator.pushNamed(context, '/registrartarj');
+    //           },                    
+    //         ), 
+    //       );
 
     return Container(
       width: double.infinity,
