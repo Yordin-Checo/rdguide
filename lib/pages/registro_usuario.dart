@@ -12,147 +12,231 @@ TextEditingController _fechaController,_nombreController,_apellidoController,_co
     _claveController,_repeatClaveController = new TextEditingController();
 
 class _RegistroUsuarioPageState extends State<RegistroUsuarioPage> {
-    double _height,_width;
+
   String _fecha = '';
+
+  TextEditingController _inputFieldDateController = new TextEditingController();
 
   @override
   Widget build(BuildContext context) {
-    _height = MediaQuery.of(context).size.height;
-    _width = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
-        title: Text("Registro Usuario"),
-      ),
-      body: Container(
-        height: _height,
-        width: _width,
-        decoration: BoxDecoration(
-            image: DecorationImage(image: AssetImage("assets/salto.jpg", ),
-                fit: BoxFit.fill)
-        ),
-        margin: EdgeInsets.only(bottom: 5),
-        child: SingleChildScrollView(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              //Opacity(opacity: 0.88,child: CustomAppBar()),
-              //clipShape(),
-              Center(child: _form()),
-              //acceptTermsTextRow(),
-              SizedBox(height: _height/35,),
-              _registrar(),
-              //infoTextRow(),
-              //socialIconsRow(),
-              //signInTextRow(),
-            ],
-          ),
-        ),
-      ),
-//      ,
-      );
-  }
+        title: Text('Registrar Usuario'),
+        backgroundColor: Colors.green,
 
-  Widget _form(){
-    return Container(
-      margin: EdgeInsets.only(
-          left:_width/ 12.0,
-          right: _width / 12.0,
-          top: _height / 20.0),
-      child: Form(
-        child: Column(
-          children: <Widget>[
-            _textField(icon: Icons.person, controller: _nombreController, hint: 'nombre'),
-           // firstNameTextFormField(),
-            SizedBox(height: _height / 60.0),
-           // lastNameTextFormField(),
-            SizedBox(height: _height/ 60.0),
-           // emailTextFormField(),
-            SizedBox(height: _height / 60.0),
-           // phoneTextFormField(),
-            SizedBox(height: _height / 60.0),
-           // passwordTextFormField(),
-          ],
-        ),
+      ),
+      body: ListView(
+        padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0,),
+        //aqui se estan creando todos los metodos que se usaran mas adelante
+        children: <Widget>[
+          _nombreInput(),
+          Divider(),
+          _apellidoInput(),
+          //Divider(),
+          //_sexo(),
+          MyStatefulWidget(),
+          Divider(),
+          _creaFecha(context),
+          Divider(),
+          _email(),
+          Divider(),
+          _crearPass(),
+          Divider(),
+          _confirmarPass(),
+          Divider(),
+          _registrar(),
+        ],
       ),
     );
   }
 
 
-  Widget _textField({@required IconData icon,@required TextEditingController controller,@required String hint}) {
 
-    return TextFormField(
-      obscureText: true,
-      controller: controller,
+  //este widget es el correspondiente al nombre
+  Widget _nombreInput() {
+    return TextField(
+      textCapitalization: TextCapitalization.sentences,
       decoration: InputDecoration(
-        prefixIcon: Icon(icon,color: Colors.grey,),
-        fillColor: Colors.white, filled: true,
-        hintText: hint,
-        //labelStyle: TextStyle(fontSize: 14,color: Colors.grey.shade400),
-        enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(10),
-          borderSide: BorderSide(
-            color: Colors.grey.shade300,
-          ),
+        border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(20.0)
         ),
-        focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(10),
-            borderSide: BorderSide(
-              color: Colors.greenAccent,
-            )
+        hintText: 'Nombres',
+        //labelText: 'Nombre',
+        prefixIcon: Icon(
+          Icons.account_circle,
+          color: Colors.grey,
+        ),
+      ),
+    );
+
+  }
+
+  //este widget es el correspondiente al apellido
+  Widget _apellidoInput() {
+
+    return TextField(
+      textCapitalization: TextCapitalization.sentences,
+      decoration: InputDecoration(
+        border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(20.0)
+        ),
+        hintText: 'Apellidos',
+        //labelText: 'Apellido',
+        prefixIcon: Icon(
+          Icons.account_circle,
+          color: Colors.grey,
         ),
       ),
     );
   }
+// bool valor0 = false;
+// bool valor1 = false;
+
+//   Widget _sexo(){
+//     return Row(
+//       mainAxisAlignment: MainAxisAlignment.center,
+//       children: <Widget>[
+//         Text("Sexo: ",style: TextStyle(fontSize: 18,color: Colors.black54, fontWeight: FontWeight.bold),),
+
+
+//         Text("Masculino",style: TextStyle(fontSize: 18,color: Colors.black54),),
+//         Checkbox(
+
+//                 value: valor0,
+//                 onChanged: (bool value) {
+//                 setState(() {
+//                 valor0 = value;
+//                 });
+//     }
+//     ),
+//   Text("Femenino",style:TextStyle(fontSize: 18,color: Colors.black54)),
+//     Checkbox(
+
+//                     value: valor1,
+//                     onChanged: (bool value) {
+//                       setState(() {
+//                         valor1 = value;
+//                       });
+//     }
+//     )
+
+
+
+
+//     ],
+//     );
+//   }
+
 
 
   //este widget es el correspondiente al campo fecha de nacimiento
- _creaFecha( BuildContext context) {
+  _creaFecha( BuildContext context) {
 
-   //final format = DateFormat("yyyy-MM-dd");
+    //final format = DateFormat("yyyy-MM-dd");
     return TextField(
       enableInteractiveSelection: false,
-      controller: _fechaController,
-        decoration: InputDecoration(
-          fillColor: Colors.white, filled: true,
-          border: OutlineInputBorder(
+      controller: _inputFieldDateController,
+      decoration: InputDecoration(
+        border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(20.0)
-          ),
-          hintText: 'Fecha de nacimiento',
-          labelText: 'Fecha de nacimiento',
-          prefixIcon: Icon(
+        ),
+        hintText: 'Fecha de nacimiento',
+        labelText: 'Fecha de nacimiento',
+        prefixIcon: Icon(
           Icons.calendar_today,
-           color: Colors.grey,
+          color: Colors.grey,
         ),
 
-        ),
-        //aqui lo que hacemos es que cuando se haga click en el boton llame al metodo _selectDate para que
-        //el datepicker abra el selector de fechas
+      ),
+      //aqui lo que hacemos es que cuando se haga click en el boton llame al metodo _selectDate para que
+      //el datepicker abra el selector de fechas
       onTap: (){
 
         FocusScope.of(context).requestFocus(new FocusNode());
         _selectDate(context);
 
       } ,
-      );
+    );
   }
   //este es el metodo que permite la funcionalidad del selector de fechas
   _selectDate(BuildContext context0) async{
 
-      DateTime picked =  await showDatePicker(
+    DateTime picked =  await showDatePicker(
         context: context,
         initialDate: new DateTime.now(),
         firstDate: new DateTime(2018),
         lastDate: new DateTime(2025),
         locale: Locale('es', 'ES')
-      );
+    );
 
-      if (picked !=null){
-        setState(() {
+    if (picked !=null){
+      setState(() {
 
-          _fecha = picked.toString();
-          _fechaController.text = _fecha;
-        });
-      }
+        _fecha = picked.toString();
+        _inputFieldDateController.text = _fecha;
+      });
+    }
+  }
+
+
+  //este widget es el correspondiente al Correo electronico
+  _email() {
+
+    return TextField(
+      decoration: InputDecoration(
+        border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(20.0)
+        ),
+        hintText: 'xxxxx@ejemplo.com',
+        // labelText: 'Email',
+        prefixIcon: Icon(
+          Icons.email,
+          color: Colors.grey,
+        ),
+
+      ),
+    );
+
+  }
+
+  //este widget es el correspondiente al campo crear contraseña
+  Widget _crearPass( ) {
+
+    return TextField(
+      obscureText: true,
+      decoration: InputDecoration(
+        border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(20.0)
+        ),
+        hintText: 'Contraseña',
+        //labelText: 'Contraseña',
+        prefixIcon: Icon(
+          Icons.lock,
+          color: Colors.grey,
+        ),
+
+      ),
+    );
+  }
+
+  //este widget es el correspondiente al campo confirmar contraseña
+  Widget _confirmarPass( ) {
+
+    return TextField(
+      obscureText: true,
+      decoration: InputDecoration(
+        border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(20.0)
+        ),
+        hintText: 'Confirmar Contraseña',
+        //labelText: 'Confirmar Contraseña',
+        prefixIcon: Icon(
+          Icons.lock,
+          color: Colors.grey,
+        ),
+
+      ),
+    );
   }
 
   //este widget es el correspondiente al campo boton registro de usuario
@@ -164,13 +248,13 @@ class _RegistroUsuarioPageState extends State<RegistroUsuarioPage> {
         child: Text('Registrarse'),
       ),
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15.0)
+          borderRadius: BorderRadius.circular(15.0)
       ),
       elevation: 0.0,
       color: Colors.green,
       textColor: Colors.white,
       onPressed: (){
-      _registrar();
+
       },
     );
   }
@@ -196,12 +280,7 @@ class RadioButton extends StatelessWidget {
   }
 }
 
-enum sexo { M, F }
-
-void _registrar() {
-  usuario.nombre = _nombreController.text;
-  print(usuario.toString());
-}
+enum SingingCharacter { masculino, femenino }
 
 class MyStatefulWidget extends StatefulWidget {
   MyStatefulWidget({Key key}) : super(key: key);
@@ -211,7 +290,7 @@ class MyStatefulWidget extends StatefulWidget {
 }
 
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
-  sexo _character = sexo.M;
+  SingingCharacter _character = SingingCharacter.masculino;
 
   Widget build(BuildContext context) {
     return Column(
@@ -221,9 +300,9 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
         ListTile(
           title: const Text('Masculino',),
           leading: Radio(
-            value: sexo.M,
+            value: SingingCharacter.masculino,
             groupValue: _character,
-            onChanged: (sexo value) {
+            onChanged: (SingingCharacter value) {
               setState(() {
                 _character = value;
               });
@@ -233,9 +312,9 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
         ListTile(
           title: const Text('Femenino'),
           leading: Radio(
-            value: sexo.F,
+            value: SingingCharacter.femenino,
             groupValue: _character,
-            onChanged: (sexo value) {
+            onChanged: (SingingCharacter value) {
               setState(() {
                 _character = value;
               });
