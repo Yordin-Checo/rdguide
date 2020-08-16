@@ -44,31 +44,31 @@ class _SeguridadPage extends State<SeguridadPage> {
 
 
 
-     return Card(
-            child: ListTile(
-              // leading: Icon(Icons.lock,color: Colors.grey,),
-              title: Text('Cambiar Contraseña'),              
-              onTap: (){
-                Navigator.pushNamed(context, '/cambiarPass');
-              },                    
-            ), 
-          );
+    //  return Card(
+    //         child: ListTile(
+    //           // leading: Icon(Icons.lock,color: Colors.grey,),
+    //           title: Text('Cambiar Contraseña'),              
+    //           onTap: (){
+    //             Navigator.pushNamed(context, '/cambiarPass');
+    //           },                    
+    //         ), 
+    //       );
           
-    // return Container(
-    //   width: double.infinity,
-    //   height: 50.0,
-    //   child: FlatButton(
-    //     textColor: Colors.black87,
-    //     splashColor: Colors.grey,
-    //     onPressed: () {
-    //       Navigator.pushNamed(context, '/cambiarPass');
-    //     },
-    //       child: Align(
-    //         alignment: Alignment.topLeft,
-    //         child: Text("Cambiar Contraseña", style: TextStyle(fontSize: 18.0),)
-    //       ),
-    //   ),
-    // );
+    return Container(
+      width: double.infinity,
+      height: 50.0,
+      child: FlatButton(
+        textColor: Colors.black87,
+        splashColor: Colors.grey,
+        onPressed: () {
+          Navigator.pushNamed(context, '/cambiarPass');
+        },
+          child: Align(
+            alignment: Alignment.topLeft,
+            child: Text("Cambiar Contraseña", style: TextStyle(fontSize: 18.0),)
+          ),
+      ),
+    );
   }
 
  Widget __switchAutentificacion(){
