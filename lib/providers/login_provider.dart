@@ -15,12 +15,12 @@ class _loginProvider {
 
   }
 
-  Future<Usuario> getUsuario() async{
+  Future<UsuarioModel> getUsuario() async{
 
   }
 
-  Future<Usuario> login({@required String correo,@required String clave}) async{
-     Usuario usuario = Usuario();
+  Future<UsuarioModel> login({@required String correo,@required String clave}) async{
+     UsuarioModel usuario = UsuarioModel();
 
     final url = Uri.http(_url, "/GetAcceso/$correo,$clave");
 
@@ -36,7 +36,7 @@ class _loginProvider {
         return Future.error({"mensaje":"Usuario o contraseña invalido"});}
 
       print(dataMap['item1']);
-      usuario = Usuario.fromJson(dataMap['item2'][0]);
+      usuario = UsuarioModel.fromJson(dataMap['item2'][0]);
 
 
 
@@ -44,7 +44,7 @@ class _loginProvider {
     return usuario;
 
   }
-  Future<Usuario> registro(Usuario usuario) async{
+  Future<UsuarioModel> registro(UsuarioModel usuario) async{
 
   }
 

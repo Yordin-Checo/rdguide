@@ -21,7 +21,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     bloc.restaurarSesion();
-    return BlocProvider(
+    // ignore: missing_required_param
+    return BlocProvider(      
       child: MaterialApp(
         title: 'Flutter Demo',
         debugShowCheckedModeBanner: false,

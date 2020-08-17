@@ -10,9 +10,9 @@ import 'package:rdguide/services/shared_preferences.dart';
 class LoginBloc extends Bloc{
 
 
-  final StreamController _loginController = StreamController<Usuario>.broadcast();
-  Function(Usuario) get _loginSink => _loginController.sink.add;
-  Stream<Usuario> get loginStream => _loginController.stream;
+  final StreamController _loginController = StreamController<UsuarioModel>.broadcast();
+  Function(UsuarioModel) get _loginSink => _loginController.sink.add;
+  Stream<UsuarioModel> get loginStream => _loginController.stream;
 
 
   final StreamController _loadingController = StreamController<bool>.broadcast();
